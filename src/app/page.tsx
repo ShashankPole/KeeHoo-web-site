@@ -1,0 +1,27 @@
+import { UseCaseChannels } from '@/components/UseCaseChannels';
+
+export default function Home() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="bg-gray-50 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
+              Your <span className="font-extrabold">Success</span>, Our <span className="font-extrabold">Promise</span>
+            </h1>
+            <p className="text-xl text-neutral-600 mb-8 max-w-3xl mx-auto">
+              Strategic tech partnership for C-level executives who envision transformative solutions. 
+              We turn your data and AI ambitions into execution excellence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Case Channels Component */}
+      <div className="min-h-screen bg-gray-50 ">
+      <UseCaseChannels />
+    </div>
+    </>
+  );
+}
