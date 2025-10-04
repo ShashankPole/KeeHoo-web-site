@@ -2,6 +2,7 @@
 
 import { UseCaseChannels } from '@/components/UseCaseChannels';
 import { IndustriesSection } from '@/components/IndustriesSection';
+import { CallToActionSection } from '@/components/CallToActionSection';
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { useScrollFadeIn } from '@/lib/useScrollFadeIn';
 
@@ -9,6 +10,7 @@ export default function Home() {
   const heroRef = useScrollFadeIn({ threshold: 0.2 });
   const useCaseRef = useScrollFadeIn({ threshold: 0.1 });
   const industriesRef = useScrollFadeIn({ threshold: 0.1 });
+  const ctaRef = useScrollFadeIn({ threshold: 0.1 });
 
   return (
     <>
@@ -56,6 +58,17 @@ export default function Home() {
         }`}
       >
         <IndustriesSection />
+      </div>
+
+      <div 
+        ref={ctaRef.ref}
+        className={`transition-all duration-1500 ease-out delay-900  ${
+          ctaRef.isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-16'
+        }`}
+      >
+        <CallToActionSection />
       </div>
     </>
   );
