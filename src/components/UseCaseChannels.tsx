@@ -248,145 +248,156 @@ export function UseCaseChannels() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl border border-neutral-200 shadow-lg hover:shadow-2xl duration-300">
-      <div className="flex h-[600px]">
-        {/* Sidebar */}
-        <div className="w-60 border-r border-neutral-200 bg-neutral-50 p-4">
-          <h2 className="mb-6 text-xs font-semibold uppercase tracking-wider flex justify-center text-neutral-500">Use Case Channels</h2>
-          <nav className="space-y-1">
-            {useCases.map((useCase) => (
-              <button
-                key={useCase.id}
-                onClick={() => setSelectedCase(useCase)}
-                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors cursor-pointer ${
-                  selectedCase.id === useCase.id ? "bg-white shadow" : "hover:bg-white"
-                }`}
-              >
-                <span className={useCase.color}>{useCase.icon}</span>
-                <span
-                  className={`flex-1 text-xs font-semibold tracking-wider ${
-                    selectedCase.id === useCase.id ? "text-primary-400" : "text-neutral-500"
-                  }`}
-                >
-                  {useCase.title}
-                </span>
-                
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        {/* Main Content */}
-        <div className="flex flex-1 flex-col bg-white">
-          {/* Header */}
-          <div className="border-b border-neutral-200 bg-white p-4">
-            <div className="flex items-center gap-4">
-              <div
-                className={`flex h-8 w-8 items-center justify-center rounded-xl ${selectedCase.bgColor} text-white`}
-              >
-                {selectedCase.icon}
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col ">
-                  <h1 className="text-lg font-semibold text-neutral-900 tracking-wider">{selectedCase.title}</h1>
-                  
-                   <p className=" text-sm text-neutral-500">{selectedCase.description}</p>
-                </div>
-              </div>
-              <div>
-                {selectedCase.hasLiveDemo && (
-                    <span className="flex items-center gap-1.5 text-sm bg-neutral-50 py-1 px-2 rounded-lg text-neutral-500">
-                      <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-                      Live Demo
-                    </span>
-                  )}
-              </div>
-            </div>
-          </div>
-
-          {/* Chat Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 scroll-smooth bg-neutral-50">
-            {messages.length === 0 ? (
-              <div className="flex items-center justify-center h-full">
-                <div className="text-center">
-                  <div
-                    className={`flex h-16 w-16 items-center justify-center rounded-full ${selectedCase.bgColor} text-white mx-auto mb-4`}
-                  >
-                    {selectedCase.icon}
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Welcome to {selectedCase.title}</h3>
-                  <p className="text-gray-600 text-sm max-w-sm">
-                    Ask me anything about {selectedCase.title.toLowerCase()} and I'll help you understand how we can assist your business.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-4 pb-4">
-                {messages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    <div
-                      className={`max-w-[80%] p-3 rounded-lg ${
-                        msg.role === 'user'
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-gray-100 text-gray-800'
+    <div className="mx-auto max-w-6xl">
+      {/* Laptop Frame */}
+      <div className="bg-gray-800 rounded-3xl p-4 shadow-2xl">
+        {/* Screen Bezel */}
+        <div className="bg-black rounded-2xl p-2">
+          {/* Screen */}
+          <div className="bg-white rounded-xl overflow-hidden shadow-inner">
+            <div className="flex h-[800px]">
+              {/* Sidebar */}
+              <div className="w-60 border-r border-neutral-200 bg-neutral-50 p-4">
+                <h2 className="mb-6 text-xs font-semibold uppercase tracking-wider flex justify-center text-neutral-500">Use Case Channels</h2>
+                <nav className="space-y-1">
+                  {useCases.map((useCase) => (
+                    <button
+                      key={useCase.id}
+                      onClick={() => setSelectedCase(useCase)}
+                      className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors cursor-pointer ${
+                        selectedCase.id === useCase.id ? "bg-white shadow" : "hover:bg-white"
                       }`}
                     >
-                      <div className="text-sm whitespace-pre-wrap">
-                        {msg.content}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                
-                {isLoading && (
-                  <div className="flex justify-start">
-                    <div className="bg-gray-100 p-3 rounded-lg">
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                <div ref={messagesEndRef} className="h-1" />
+                      <span className={useCase.color}>{useCase.icon}</span>
+                      <span
+                        className={`flex-1 text-xs font-semibold tracking-wider ${
+                          selectedCase.id === useCase.id ? "text-primary-400" : "text-neutral-500"
+                        }`}
+                      >
+                        {useCase.title}
+                      </span>
+                      
+                    </button>
+                  ))}
+                </nav>
               </div>
-            )}
-          </div>
 
-          {/* Input Area */}
-          <div className="border-t border-neutral-200 bg-white p-4">
-            <div className="flex items-center gap-3">
-              <Input
-                type="text"
-                placeholder={`Ask about ${selectedCase.title.toLowerCase()}...`}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault()
-                    handleSendMessage()
-                  }
-                }}
-               className="flex-1 border border-neutral-200 rounded-xl py-6 focus:outline-none focus:ring-0 focus:shadow-none"
-                disabled={isLoading}
-              />
-              <Button 
-                onClick={handleSendMessage} 
-                size="icon" 
-                className="bg-neutral-100 hover:bg-neutral-200 disabled:bg-gray-300 cursor-pointer"
-                disabled={!message.trim() || isLoading}
-              >
-                <Send className="h-4 w-4" />
-              </Button>
+              {/* Main Content */}
+              <div className="flex flex-1 flex-col bg-white">
+                {/* Header */}
+                <div className="border-b border-neutral-200 bg-white p-4">
+                  <div className="flex items-center gap-4">
+                    {/* <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-xl ${selectedCase.bgColor} text-white`}
+                    >
+                      {selectedCase.icon}
+                    </div> */}
+                    <div className="flex-1">
+                      <div className="flex flex-col ">
+                        <h1 className="text-lg font-semibold text-neutral-900 tracking-wider">{selectedCase.title}</h1>
+                        
+                         <p className=" text-sm text-neutral-500">{selectedCase.description}</p>
+                      </div>
+                    </div>
+                    <div>
+                      {selectedCase.hasLiveDemo && (
+                          <span className="flex items-center gap-1.5 text-sm bg-neutral-50 py-1 px-2 rounded-lg text-neutral-500">
+                            <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                            Live Demo
+                          </span>
+                        )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chat Messages Area */}
+                <div className="flex-1 overflow-y-auto p-4 scroll-smooth bg-neutral-50">
+                  {messages.length === 0 ? (
+                    <div className="flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <div
+                          className={`flex h-16 w-16 items-center justify-center rounded-full ${selectedCase.bgColor} text-white mx-auto mb-4`}
+                        >
+                          {selectedCase.icon}
+                        </div>
+                        <h3 className="text-lg font-medium text-gray-900 mb-2">Welcome to {selectedCase.title}</h3>
+                        <p className="text-gray-600 text-sm max-w-sm">
+                          Ask me anything about {selectedCase.title.toLowerCase()} and I'll help you understand how we can assist your business.
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="space-y-4 pb-4">
+                      {messages.map((msg) => (
+                        <div
+                          key={msg.id}
+                          className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                        >
+                          <div
+                            className={`max-w-[80%] p-3 rounded-lg ${
+                              msg.role === 'user'
+                                ? 'bg-indigo-600 text-white'
+                                : 'bg-gray-100 text-gray-800'
+                            }`}
+                          >
+                            <div className="text-sm whitespace-pre-wrap">
+                              {msg.content}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                      
+                      {isLoading && (
+                        <div className="flex justify-start">
+                          <div className="bg-gray-100 p-3 rounded-lg">
+                            <div className="flex space-x-1">
+                              <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                              <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                              <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      <div ref={messagesEndRef} className="h-1" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Input Area */}
+                <div className="border-t border-neutral-200 bg-white p-4">
+                  <div className="flex items-center gap-3">
+                    <Input
+                      type="text"
+                      placeholder={`Ask about ${selectedCase.title.toLowerCase()}...`}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && !e.shiftKey) {
+                          e.preventDefault()
+                          handleSendMessage()
+                        }
+                      }}
+                     className="flex-1 border border-neutral-200 rounded-xl py-6 focus:outline-none focus:ring-0 focus:shadow-none"
+                      disabled={isLoading}
+                    />
+                    <Button 
+                      onClick={handleSendMessage} 
+                      size="icon" 
+                      className="bg-neutral-100 hover:bg-neutral-200 disabled:bg-gray-300 cursor-pointer"
+                      disabled={!message.trim() || isLoading}
+                    >
+                      <Send className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
+      
     </div>
   )
 }

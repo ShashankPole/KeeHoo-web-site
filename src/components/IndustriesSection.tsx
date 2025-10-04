@@ -81,7 +81,7 @@ export function IndustriesSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`text-lg font-semibold pb-2 border-b-2 tracking-wider transition-colors ${
+              className={`text-lg font-medium pb-2 border-b-2 tracking-wider transition-colors ${
                 activeTab === tab.id
                   ? "text-secondary-600 border-secondary-600"
                   : "text-gray-500 border-transparent hover:text-gray-700"
