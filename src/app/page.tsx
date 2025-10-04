@@ -1,4 +1,5 @@
 import { UseCaseChannels } from '@/components/UseCaseChannels';
+import { IndustriesSection } from '@/components/IndustriesSection';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
               Your <span className="font-extrabold">Success</span>, Our <span className="font-extrabold">Promise</span>
             </h1>
-            <p className="text-xl text-neutral-600 mb-6 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
               Strategic tech partnership for C-level executives who envision transformative solutions. 
               We turn your data and AI ambitions into execution excellence.
             </p>
@@ -19,9 +20,14 @@ export default function Home() {
       </section>
 
       {/* Use Case Channels Component */}
-      <div className="min-h-screen bg-neutral-100/70 ">
+      <div className="min-h-full py-8 pb-16 bg-neutral-100/70 ">
       <UseCaseChannels />
     </div>
+    
+     <div className='pb-16 bg-indigo-50/30'>
+      <IndustriesSection />
+      </div>
+     
     </>
   );
 }

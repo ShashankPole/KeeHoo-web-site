@@ -29,7 +29,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-800 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className="text-neutral-500 hover:text-primary-600 px-3 py-2 tracking-wider text-sm font-semibold transition-colors duration-200"
               >
                 {item.name}
               </Link>

@@ -248,7 +248,7 @@ export function UseCaseChannels() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-neutral-200 shadow-lg hover:shadow-2xl duration-300">
+    <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl border border-neutral-200 shadow-lg hover:shadow-2xl duration-300">
       <div className="flex h-[600px]">
         {/* Sidebar */}
         <div className="w-60 border-r border-neutral-200 bg-neutral-50 p-4">
@@ -288,7 +288,7 @@ export function UseCaseChannels() {
               </div>
               <div className="flex-1">
                 <div className="flex flex-col ">
-                  <h1 className="text-lg font-semibold text-neutral-900">{selectedCase.title}</h1>
+                  <h1 className="text-lg font-semibold text-neutral-900 tracking-wider">{selectedCase.title}</h1>
                   
                    <p className=" text-sm text-neutral-500">{selectedCase.description}</p>
                 </div>
@@ -360,7 +360,7 @@ export function UseCaseChannels() {
 
           {/* Input Area */}
           <div className="border-t border-neutral-200 bg-white p-4">
-            <div className="flex gap-3">
+            <div className="flex items-center gap-3">
               <Input
                 type="text"
                 placeholder={`Ask about ${selectedCase.title.toLowerCase()}...`}
@@ -372,13 +372,13 @@ export function UseCaseChannels() {
                     handleSendMessage()
                   }
                 }}
-                className="flex-1 border-neutral-200 rounded-lg p-5 focus:border-neutral-200 focus:ring-0 focus:outline-none"
+               className="flex-1 border border-neutral-200 rounded-xl py-6 focus:outline-none focus:ring-0 focus:shadow-none"
                 disabled={isLoading}
               />
               <Button 
                 onClick={handleSendMessage} 
                 size="icon" 
-                className="bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300"
+                className="bg-neutral-100 hover:bg-neutral-200 disabled:bg-gray-300 cursor-pointer"
                 disabled={!message.trim() || isLoading}
               >
                 <Send className="h-4 w-4" />
