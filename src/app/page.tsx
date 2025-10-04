@@ -1,5 +1,6 @@
 import { UseCaseChannels } from '@/components/UseCaseChannels';
 import { IndustriesSection } from '@/components/IndustriesSection';
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function Home() {
   return (
@@ -9,7 +10,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-2xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Your <span className="font-extrabold">Success</span>, Our <span className="font-extrabold">Promise</span>
+              Your <span className="font-extrabold">Success</span>, Our   <PointerHighlight
+           
+            containerClassName="inline-block mx-1"
+          >  <span className="font-extrabold">Promise</span></PointerHighlight>
             </h1>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
               Strategic tech partnership for C-level executives who envision transformative solutions. 
@@ -17,12 +21,13 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Use Case Channels Component */}
-      <div className="min-h-full py-8 pb-16 bg-neutral-100/70 ">
+        <div className="min-h-full py-12  ">
       <UseCaseChannels />
     </div>
+      </section>
+
+     
+    
     
      <div className='pb-16 bg-indigo-50/30'>
       <IndustriesSection />
