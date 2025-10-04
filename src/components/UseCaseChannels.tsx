@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react"
 import { BarChart3, Zap, RefreshCw, Target, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
 
 type UseCase = {
   id: string
@@ -66,6 +67,7 @@ export function UseCaseChannels() {
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const fadeRef = useScrollFadeIn({ threshold: 0.1 })
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
@@ -248,7 +250,14 @@ export function UseCaseChannels() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <div 
+      ref={fadeRef.ref}
+      className={`mx-auto max-w-6xl transition-all duration-1500 ease-out ${
+        fadeRef.isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-16'
+      }`}
+    >
       {/* Laptop Frame */}
       <div className="bg-gray-800 rounded-3xl p-4 shadow-2xl">
         {/* Screen Bezel */}

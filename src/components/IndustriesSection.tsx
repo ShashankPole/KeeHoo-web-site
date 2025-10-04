@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { Building2, Heart, ShoppingCart, Laptop, Factory, Tv } from "lucide-react"
+import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
 
 type Industry = {
   id: string
@@ -65,6 +66,7 @@ const industries: Industry[] = [
 
 export function IndustriesSection() {
   const [activeTab, setActiveTab] = useState("industries")
+  const fadeRef = useScrollFadeIn({ threshold: 0.1 })
 
   const tabs = [
     { id: "industries", label: "Industries" },
@@ -73,7 +75,14 @@ export function IndustriesSection() {
   ]
 
   return (
-    <section className="py-4  border-t border-neutral-200">
+    <section 
+      ref={fadeRef.ref}
+      className={`py-4 border-t border-neutral-200 transition-all duration-1500 ease-out ${
+        fadeRef.isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-16'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tabs */}
         <div className="flex space-x-8 mb-12 ">
@@ -95,10 +104,17 @@ export function IndustriesSection() {
         {/* Content based on active tab */}
         {activeTab === "industries" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 py-2">
-            {industries.map((industry) => (
+            {industries.map((industry, index) => (
               <div
                 key={industry.id}
-                className="bg-white rounded-2xl border border-neutral-200 shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                className={`bg-white rounded-2xl border border-neutral-200 shadow-sm hover:shadow-lg transition-all duration-800 overflow-hidden ${
+                  fadeRef.isVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-12'
+                }`}
+                style={{ 
+                  transitionDelay: `${index * 150}ms` 
+                }}
               >
                   {/* Header with image */}
                   <div className="relative p-6 m-2 rounded-2xl h-36 overflow-hidden">
