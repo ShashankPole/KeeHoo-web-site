@@ -3,6 +3,13 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "KheeHoo - Innovative Business Solutions",
@@ -36,7 +43,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="antialiased">
+      <body className={`${manrope.className} antialiased`}>
         <Navbar />
         <main className="min-h-screen">
           {children}

@@ -103,14 +103,14 @@ export function IndustriesSection() {
 
         {/* Content based on active tab */}
         {activeTab === "industries" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 py-2">
+          <div ref={fadeRef.ref}  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 py-2">
             {industries.map((industry, index) => (
               <div
                 key={industry.id}
                 className={`bg-white rounded-2xl border border-neutral-200 shadow-sm hover:shadow-lg transition-all duration-800 overflow-hidden ${
                   fadeRef.isVisible 
                     ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-12'
+                    : 'opacity-0 translate-y-36'
                 }`}
                 style={{ 
                   transitionDelay: `${index * 150}ms` 

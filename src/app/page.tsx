@@ -5,6 +5,7 @@ import { IndustriesSection } from '@/components/IndustriesSection';
 import { CallToActionSection } from '@/components/CallToActionSection';
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { useScrollFadeIn } from '@/lib/useScrollFadeIn';
+import { InteractiveChat } from '@/components/interactive-chat';
 
 export default function Home() {
   const heroRef = useScrollFadeIn({ threshold: 0.2 });
@@ -17,7 +18,7 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         ref={heroRef.ref}
-        className={`bg-neutral-100/70 py-8 transition-all duration-1500 ease-out ${
+        className={`bg-neutral-100/70 py-10 transition-all duration-1500 ease-out ${
           heroRef.isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-16'
@@ -25,8 +26,8 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-2xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Your <span className="font-extrabold">Success</span>, Our   <PointerHighlight
+            <h1 className="text-2xl md:text-6xl font-extrabold text-neutral-900 mb-6">
+              <span className="font-extrabold">Your</span>  <span className="font-extrabold">Success</span>,<span className="font-extrabold">Our</span>    <PointerHighlight
            
             containerClassName="inline-block mx-1"
           >  <span className="font-extrabold">Promise</span></PointerHighlight>
@@ -45,7 +46,7 @@ export default function Home() {
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <UseCaseChannels />
+          <InteractiveChat />
         </div>
       </section>
 
@@ -60,7 +61,7 @@ export default function Home() {
         <IndustriesSection />
       </div>
 
-      <div 
+      {/* <div 
         ref={ctaRef.ref}
         className={`transition-all duration-1500 ease-out delay-900  ${
           ctaRef.isVisible 
@@ -69,7 +70,7 @@ export default function Home() {
         }`}
       >
         <CallToActionSection />
-      </div>
+      </div> */}
     </>
   );
 }

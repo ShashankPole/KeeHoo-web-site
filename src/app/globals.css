@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource/urbanist";
+/* Removed Urbanist in favor of Manrope loaded via next/font */
 
 @theme {
   /* Primary brand colors */
@@ -107,14 +107,16 @@
   --color-error-900: #7f1d1d;
 
   /* Font families */
-  --font-family-sans: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-mono: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 }
 
 body {
   font-family: var(--font-family-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale;  /* Firefox on Mac */
+  text-rendering: optimizeLegibility;
+
 }
 
 /* Custom styles for keehoo design */
