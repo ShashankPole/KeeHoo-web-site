@@ -13,8 +13,9 @@ export function InteractiveChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState("")
   const [isTyping, setIsTyping] = useState(false)
-  const [autoLoop, setAutoLoop] = useState(true)
+  const [autoLoop, setAutoLoop] = useState(false)
   const chatMessagesRef = useRef<HTMLDivElement>(null)
+  const hasEnabledAutoRef = useRef(false)
 
   const scrollToBottom = () => {
     if (chatMessagesRef.current) {
@@ -36,6 +37,19 @@ export function InteractiveChat() {
       return () => clearTimeout(timer)
     }
   }, [currentChannel, autoLoop, messages.length])
+
+  // Start auto demo only after the user scrolls at least once
+  useEffect(() => {
+    if (hasEnabledAutoRef.current) return
+    const onFirstScroll = () => {
+      if (hasEnabledAutoRef.current) return
+      hasEnabledAutoRef.current = true
+      setAutoLoop(true)
+      window.removeEventListener("scroll", onFirstScroll)
+    }
+    window.addEventListener("scroll", onFirstScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onFirstScroll)
+  }, [])
 
   const showChannelDemo = async (channelIndex: number) => {
     const channel = channels[channelIndex]
@@ -128,8 +142,8 @@ export function InteractiveChat() {
                   <div className="chat-header-left flex items-center gap-3">
                     <div className="channel-header-icon text-primary">{renderIcon(channels[currentChannel].icon)}</div>
                     <div className="channel-header-info">
-                      <h3 className="text-lg font-semibold text-gray-900">{channels[currentChannel].name}</h3>
-                      <p className="text-sm text-gray-600">{channels[currentChannel].subtitle}</p>
+                      <h3 className="text-md font-semibold text-gray-900">{channels[currentChannel].name}</h3>
+                      <p className="text-xs text-gray-600">{channels[currentChannel].subtitle}</p>
                     </div>
                   </div>
                 </div>

@@ -26,12 +26,12 @@ export default function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 border-b border-neutral-200 transition-all duration-300 ease-in-out ${
       isScrolled 
-        ? 'bg-white/80 backdrop-blur-md shadow-lg h-14' 
+        ? 'bg-white/80 backdrop-blur-md  h-16' 
         : 'bg-white h-16'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center transition-all duration-300 ease-in-out ${
-          isScrolled ? 'h-14' : 'h-16'
+          isScrolled ? 'h-16' : 'h-16'
         }`}>
           {/* Logo */}
           <div className="flex items-center">
@@ -53,15 +53,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Get Started Button */}
-          <div className="hidden md:flex items-center">
-            <Link
-              href="/contact"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
-            >
-              Get Started
-            </Link>
-          </div>
+        <div></div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">

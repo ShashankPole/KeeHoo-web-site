@@ -13,8 +13,8 @@ export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }:
   return (
     <div className="chat-sidebar w-80 bg-white border-r border-[#e5e5e5] p-6">
       <div className="chat-sidebar-header">
-        <div className="chat-sidebar-title text-sm font-semibold text-foreground mb-6 uppercase tracking-wide">
-          Use Case Channels
+        <div className="chat-sidebar-title text-md pl-2 font-extrabold text-neutral-600 mb-6 uppercase tracking-wide">
+          Keehoo.ai
         </div>
         <ul className="channels-list space-y-2">
           {channels.map((channel, index) => {
@@ -24,10 +24,10 @@ export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }:
               <li
                 key={index}
                 onClick={() => onChannelSwitch(index)}
-                className={`channel-item flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 hover:shadow-sm ${
+                className={`channel-item flex items-center gap-4 p-3 rounded-xl bg-neutral-50 cursor-pointer transition-all duration-200 hover:shadow-sm ${
                   currentChannel === index
-                    ? "bg-primary/10 text-primary border border-primary/20 shadow-sm"
-                    : "text-muted-foreground hover:bg-accent"
+                    ? "bg-white text-primary border border-neutral-200 shadow-md"
+                    : "text-muted-foreground hover:bg-accent  border-neutral-200"
                 }`}
               >
                 <span className="channel-icon">{IconComponent && <IconComponent className="w-5 h-5" />}</span>

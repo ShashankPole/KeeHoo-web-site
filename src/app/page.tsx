@@ -18,7 +18,7 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         ref={heroRef.ref}
-        className={`bg-neutral-100/70 py-10 transition-all duration-1500 ease-out ${
+        className={`bg-neutral-100/70 py-12 transition-all duration-1500 ease-out ${
           heroRef.isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-16'
@@ -32,7 +32,7 @@ export default function Home() {
             containerClassName="inline-block mx-1"
           >  <span className="font-extrabold">Promise</span></PointerHighlight>
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
               Strategic tech partnership for C-level executives who envision transformative solutions. 
               We turn your data and AI ambitions into execution excellence.
             </p>
