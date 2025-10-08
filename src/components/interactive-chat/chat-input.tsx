@@ -15,21 +15,21 @@ interface ChatInputProps {
 
 export function ChatInput({ value, isTyping, onChange, onSend, onKeyPress }: ChatInputProps) {
   return (
-    <div className="chat-input-area border-t border-gray-200 px-6 py-4 bg-white">
-      <div className="input-wrapper flex gap-3 items-center">
+    <div className="chat-input-area px-12 py-5">
+      <div className="input-wrapper flex gap-3 items-center  border border-neutral-200 py-2 bg-white rounded-3xl shadow-lg px-6">
         <Input
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onKeyPress={onKeyPress}
-          placeholder="Ask about this use case..."
+          placeholder="Ask anything"
           disabled={isTyping}
-          className="flex-1 text-xs h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-xl  bg-gray-50"
+          className="flex-1 text-sm  rounded-xl  border-0 focus:ring-0 focus:border-gray-300"
         />
         <Button
           onClick={onSend}
           disabled={!value.trim() || isTyping}
           size="icon"
-          className="shrink-0 h-10 w-10 bg-gray-100 hover:bg-gray-200 rounded-xl"
+          className="shrink-0 h-8 w-8 bg-gray-800 hover:bg-gray-700 text-white rounded-lg"
         >
           <Send className="w-4 h-4" />
         </Button>

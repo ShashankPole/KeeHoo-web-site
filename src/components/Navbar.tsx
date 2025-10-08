@@ -34,9 +34,10 @@ export default function Navbar() {
           isScrolled ? 'h-16' : 'h-16'
         }`}>
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary-600">keehoo</span>
+            <img src="/keehoo.svg" alt="KeeHoo Logo" className="h-7 w-7 mr-3 "/>
+              <span className="text-2xl font-extrabold text-neutral-800 ">KeeHoo</span>
             </Link>
           </div>
 
@@ -46,7 +47,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-500 hover:text-primary-600 px-3 py-2 tracking-wider text-sm font-semibold transition-colors duration-200"
+                className="text-neutral-800 hover:text-neutral-600 px-2 py-2 tracking-wider text-sm font-bold transition-colors duration-200"
               >
                 {item.name}
               </Link>

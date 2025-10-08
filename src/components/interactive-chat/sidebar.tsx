@@ -11,12 +11,12 @@ interface SidebarProps {
 
 export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }: SidebarProps) {
   return (
-    <div className="chat-sidebar w-80 bg-white border-r border-[#e5e5e5] p-6">
+    <div className="chat-sidebar w-72 bg-[#F5F5F5] border-r border-[#e5e5e5]  flex flex-col">
       <div className="chat-sidebar-header">
-        <div className="chat-sidebar-title text-md pl-2 font-extrabold text-neutral-600 mb-6 uppercase tracking-wide">
-          Keehoo.ai
+        <div className="chat-sidebar-title text-2xl border-b border-[#e5e5e5] h-16 flex items-center justify-center text-center  font-extrabold text-gray-800 mb-6">
+          Keehoo AI
         </div>
-        <ul className="channels-list space-y-2">
+        <ul className="channels-list space-y-2 px-6">
           {channels.map((channel, index) => {
             const IconComponent = iconComponents[channel.icon as keyof typeof iconComponents]
 
@@ -24,28 +24,37 @@ export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }:
               <li
                 key={index}
                 onClick={() => onChannelSwitch(index)}
-                className={`channel-item flex items-center gap-4 p-3 rounded-xl bg-neutral-50 cursor-pointer transition-all duration-200 hover:shadow-sm ${
+                className={`channel-item flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 ${
                   currentChannel === index
-                    ? "bg-white text-primary border border-neutral-200 shadow-md"
-                    : "text-muted-foreground hover:bg-accent  border-neutral-200"
+                    ? "bg-[#EAEAEA] text-gray-800"
+                    : "bg-[#F5F5F5] text-gray-600 hover:bg-gray-50"
                 }`}
               >
-                <span className="channel-icon">{IconComponent && <IconComponent className="w-5 h-5" />}</span>
+                <span className="channel-icon bg-neutral-100/80 p-1 rounded-md">{IconComponent && <IconComponent className="w-5 h-5" />}</span>
                 <div className="flex-1 min-w-0">
                   <div className="channel-name text-sm font-semibold truncate">{channel.name}</div>
-                  <div className="channel-subtitle text-xs text-muted-foreground truncate mt-0.5">
+                  <div className="channel-subtitle text-xs text-gray-500 truncate mt-0.5">
                     {channel.subtitle}
                   </div>
                 </div>
-                {index === (currentChannel + 1) % channels.length && autoLoop && (
-                  <span className="channel-badge bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full min-w-[20px] h-5 flex items-center justify-center font-medium">
-                    1
-                  </span>
-                )}
+                
               </li>
             )
           })}
         </ul>
+      </div>
+      
+      {/* User Profile Section */}
+      <div className="mt-auto h-18 flex justify-start ml-6    border-t border-gray-200">
+        <div className="flex items-center gap-4">
+          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+            <span className="text-sm font-semibold text-gray-600">U</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-semibold text-gray-800 truncate">UdayaSingh</div>
+            <div className="text-xs text-gray-500 truncate">udayasing1@gmail.com</div>
+          </div>
+        </div>
       </div>
     </div>
   )

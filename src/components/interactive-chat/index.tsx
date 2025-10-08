@@ -71,7 +71,7 @@ export function InteractiveChat() {
           setMessages([])
         }, 4000)
       }
-    }, 2000)
+    }, 4000)
   }
 
   const typeInInputBox = async (text: string) => {
@@ -122,11 +122,11 @@ export function InteractiveChat() {
   return (
    
     <section className="max-w-7xl mx-auto px-6 pb-24">
-       <div className="bg-gray-800 rounded-3xl p-4 shadow-2xl">
-      <div className="bg-black rounded-2xl p-2 ">
+    
+      <div className="bg-black rounded-3xl p-4 ">
       <div className="">
       
-            <div className="flex h-[800px] rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-lg">
+            <div className="flex h-[800px]  rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-lg">
               {/* Sidebar */}
               <Sidebar
                 channels={channels}
@@ -136,11 +136,11 @@ export function InteractiveChat() {
               />
 
               {/* Main Chat Area */}
-              <div className="chat-main flex-1 flex flex-col bg-gray-50">
+              <div className="chat-main flex-1 flex flex-col bg-white">
                 {/* Header */}
-                <div className="chat-header border-b border-gray-200 px-6 py-4 flex items-center justify-between bg-white">
+                <div className="chat-header border-b border-gray-200 px-6 h-16 flex items-center justify-between bg-[#F5F5F5]">
                   <div className="chat-header-left flex items-center gap-3">
-                    <div className="channel-header-icon text-primary">{renderIcon(channels[currentChannel].icon)}</div>
+                    <div className="channel-header-icon text-primary bg-neutral-200 p-1 rounded-md">{renderIcon(channels[currentChannel].icon)}</div>
                     <div className="channel-header-info">
                       <h3 className="text-md font-semibold text-gray-900">{channels[currentChannel].name}</h3>
                       <p className="text-xs text-gray-600">{channels[currentChannel].subtitle}</p>
@@ -161,7 +161,7 @@ export function InteractiveChat() {
                 />
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
   

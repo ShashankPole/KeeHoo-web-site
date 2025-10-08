@@ -1,5 +1,5 @@
 import { forwardRef } from "react"
-import { Info, Sparkles } from "lucide-react"
+import { Info, Atom } from "lucide-react"
 import type { Message } from "./types"
 
 interface ChatMessagesProps {
@@ -30,17 +30,17 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
   return (
     <div
       ref={ref}
-      className="chat-messages flex-1 overflow-y-auto px-6 py-4 space-y-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      className="chat-messages flex-1 overflow-y-auto px-16 py-6 space-y-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       {messages.map((message, index) => (
         <div
           key={index}
           className={`message ${message.type === "user" ? "user" : "ai"} ${
-            message.type === "user" ? "ml-auto max-w-[70%]" : "mr-auto max-w-[80%]"
+            message.type === "user" ? "ml-auto max-w-[50%]" : "mr-auto max-w-[80%]"
           }`}
         >
           {message.type === "user" && (
-            <div className="message-content p-3 rounded-xl text-xs leading-relaxed border border-gray-200 bg-white shadow-sm ">
+            <div className="message-content p-2 px-4 rounded-xl text-sm leading-relaxed bg-[#F7F7F7] text-black border border-[#E0E0E0] shadow-sm">
               <div className="whitespace-pre-wrap">{message.content}</div>
             </div>
           )}
@@ -48,17 +48,17 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
           {message.type === "ai" && (() => {
             const { title, paragraphs, impact } = parseAiContent(message.content)
             return (
-              <div className="w-full">
-                <div className="text-[11px] text-gray-600 mb-2 flex items-center gap-2">
-                  <div className="w-4 h-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full flex items-center justify-center border border-blue-200">
-                    <Sparkles className="w-2.5 h-2.5 text-blue-600" />
+              <div className="w-full ">
+                <div className="text-xs text-gray-600 mb-2 flex items-center gap-2">
+                  <div className="w-5 h-5  rounded-full  flex items-center justify-center">
+                    <Atom className="w-4 h-4 animate-slow-spin" />
                   </div>
-                  <span className="font-medium tracking-wide uppercase">KeeHoo AI</span>
+                  <span className="font-semibold text-neutral-800">keehoo ai</span>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-6">
-                  {title && <h4 className="text-base font-semibold text-gray-900 mb-3">{title}</h4>}
-                  <div className="space-y-4 text-gray-700 text-xs leading-relaxed">
+                <div className="rounded-xl border border-gray-200 bg-[#F7F7F7] shadow-sm p-6">
+                  {title && <h4 className="text-lg font-semibold text-gray-900 mb-3">{title}</h4>}
+                  <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
                     {paragraphs.map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
@@ -67,8 +67,8 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
                     )}
                   </div>
 
-                  <div className="mt-6 flex flex-col sm:flex sm:items-start justify-between gap-3">
-                    <div className="text-[11px] text-gray-500 flex items-center gap-1">
+                  <div className="mt-6 flex flex-col sm:flex sm:justify-between gap-3">
+                    <div className="text-xs text-gray-500 flex border border-neutral-300 p-1.5 rounded-lg items-center gap-1">
                       <Info className="w-3 h-3" />
                       <span>Based on keehoo case studies & client implementations</span>
                     </div>
@@ -77,11 +77,10 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
                         href="https://public.tableau.com/app/profile/valerie1556/viz/DataforaCause-GlobalPeaceScores/DASHBOARD"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 rounded-lg text-white bg-black hover:bg-neutral-500 text-xs"
+                        className="px-4 py-2 rounded-lg text-white bg-black hover:bg-gray-700 text-sm"
                       >
                         See Demo
                       </a>
-                      <button className="px-4 py-2 rounded-lg text-neutral-800 bg-white hover:bg-violet-100 border border-violet-200 text-xs">Learn More</button>
                     </div>
                   </div>
                 </div>
@@ -93,18 +92,18 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
 
       {isTyping && (
         <div className="typing-indicator mr-auto max-w-[80%]">
-          <div className="text-[11px] text-gray-600 mb-2 flex items-center gap-2">
-            <div className="w-4 h-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full flex items-center justify-center border border-blue-200">
-              <Sparkles className="w-2.5 h-2.5 text-blue-600" />
+          <div className="text-xs text-gray-600 mb-2 flex items-center gap-2">
+            <div className="w-5 h-5  rounded-full flex items-center justify-center">
+              <Atom className="w-4 h-4 animate-slow-spin" />
             </div>
-            <span className="font-medium tracking-wide uppercase">KeeHoo AI</span>
+            <span className="font-medium">keehoo ai</span>
           </div>
-          <div className="bg-white text-gray-900 p-4 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="bg-[#F7F7F7] text-gray-900 p-4 rounded-2xl border border-gray-200 shadow-sm">
             <div className="flex gap-1 items-center">
-              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></span>
-              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
-              <span className="text-[11px] ml-3 text-gray-500 font-medium">KeeHoo AI is thinking...</span>
+              <span className="w-2 h-2 bg-gray-700 rounded-full animate-bounce"></span>
+              <span className="w-2 h-2 bg-gray-700 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></span>
+              <span className="w-2 h-2 bg-gray-700 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
+              <span className="text-xs ml-3 text-gray-800 font-medium">keehoo AI is thinking...</span>
             </div>
           </div>
         </div>
