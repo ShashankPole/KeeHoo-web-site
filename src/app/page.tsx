@@ -18,7 +18,7 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         ref={heroRef.ref}
-        className={`bg-[#FAFAFA] py-12 transition-all duration-1500 ease-out ${
+        className={`bg-[#ffffff] py-12 transition-all duration-1500 ease-out ${
           heroRef.isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-16'
