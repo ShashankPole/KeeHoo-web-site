@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useRef, useState } from "react"
-import { Brain, Workflow, GitBranch, Database, Code, Globe, ChevronRight } from "lucide-react"
+import { Brain, Workflow, GitBranch, Database, Code, Globe, ChevronRight, Network, Shield, FileText, BarChart3, Users, Users2, RefreshCw, ShieldCheck, Zap, Link } from "lucide-react"
 import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
 
 type Product = {
@@ -11,13 +11,31 @@ type Product = {
   icon: React.ReactNode
 }
 
-const products: Product[] = [
+const bookmyfunProducts: Product[] = [
   { id: "conversational-ai", title: "Conversational AI", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Brain className="h-6 w-6" /> },
   { id: "workflow", title: "Workflow", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Workflow className="h-6 w-6" /> },
   { id: "nextjs", title: "NextJS", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Code className="h-6 w-6" /> },
   { id: "gitlab", title: "GitLab", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <GitBranch className="h-6 w-6" /> },
   { id: "go", title: "Go", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Globe className="h-6 w-6" /> },
   { id: "mongodb", title: "Mongo DB", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Database className="h-6 w-6" /> },
+]
+
+const mdmProducts: Product[] = [
+  { id: "conversational-ai", title: "Conversational AI", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Brain className="h-6 w-6" /> },
+  { id: "graph-intelligence", title: "Graph Intelligence Engine", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Network className="h-6 w-6" /> },
+  { id: "core-mdm", title: "Core MDM", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Shield className="h-6 w-6" /> },
+  { id: "unified-data", title: "Unified Data Model", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <FileText className="h-6 w-6" /> },
+  { id: "data-quality", title: "Data Quality Insights", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <BarChart3 className="h-6 w-6" /> },
+  { id: "data-steward", title: "Data Steward Tool", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Users className="h-6 w-6" /> },
+]
+
+const workflowProducts: Product[] = [
+  { id: "conversational-ai", title: "Conversational AI", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Brain className="h-6 w-6" /> },
+  { id: "human-in-loop", title: "Human-in-the-Loop", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Users2 className="h-6 w-6" /> },
+  { id: "visual-workflow", title: "Visual Workflow Builder", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <RefreshCw className="h-6 w-6" /> },
+  { id: "security-monitoring", title: "Security & Monitoring", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <ShieldCheck className="h-6 w-6" /> },
+  { id: "smart-execution", title: "Smart Execution Engine", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Zap className="h-6 w-6" /> },
+  { id: "integration-connectivity", title: "Integration & Connectivity", description: "Your AI-powered assistant for smarter event discovery and seamless booking.", icon: <Link className="h-6 w-6" /> },
 ]
 
 export function ProductsPanel() {
@@ -42,6 +60,37 @@ export function ProductsPanel() {
     { id: "MDM", label: "MDM" },
     { id: "Workflow", label: "Workflow" }
   ]
+
+  const getCurrentProducts = () => {
+    switch (activeFilter) {
+      case "MDM": return mdmProducts
+      case "Workflow": return workflowProducts
+      default: return bookmyfunProducts
+    }
+  }
+
+  const getFeaturedCardContent = () => {
+    switch (activeFilter) {
+      case "MDM":
+        return {
+          title: "MDM",
+          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+        }
+      case "Workflow":
+        return {
+          title: "Workflow",
+          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+        }
+      default:
+        return {
+          title: "BookMyShow",
+          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+        }
+    }
+  }
+
+  const currentProducts = getCurrentProducts()
+  const featuredCardContent = getFeaturedCardContent()
  
 
   return (
@@ -92,9 +141,12 @@ export function ProductsPanel() {
               <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
               
               <div className="relative z-10 flex flex-col justify-end h-full gap-8 ">
-                <p className="text-xl font-normal text-gray-500 mb-6 leading-relaxed">
-                  Plan smarter, book faster, and experience better — all with BookMyShow
-                </p>
+                <div className="mb-4">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">{featuredCardContent.title}</h3>
+                  <p className="text-xl font-normal text-gray-500 leading-relaxed">
+                    {featuredCardContent.description}
+                  </p>
+                </div>
                 <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors self-start">
                   Explore the product
                 </button>
@@ -106,7 +158,7 @@ export function ProductsPanel() {
           {/* Product Grid */}
           <div className="lg:col-span-2">
             <div className="grid grid-cols-3 gap-4">
-              {products.map((product, index) => (
+              {currentProducts.map((product, index) => (
                 <div
                   key={product.id}
                   className={`bg-white rounded-3xl p-6 shadow-md  border border-gray-200 hover:shadow-lg transition-all duration-300 ${
