@@ -59,9 +59,14 @@ export function ProductsPanel() {
 
       {/* Main Title */}
       <div className="text-start mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            Explore tools for bringing your vision to life
+          </h2>
+        </div>
+
         
         {/* Filter Buttons */}
-        <div className="flex justify-start space-x-4 ml-5">
+        <div className="flex justify-start space-x-4 my-5">
           {filters.map((filter) => (
             <button
               key={filter.id}
@@ -79,7 +84,7 @@ export function ProductsPanel() {
       </div>
 
       {/* Content based on active tab */}
-        <div ref={productsRef} id="products-section" className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div ref={productsRef} id="products-section" className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-8" >
           {/* Large Featured Card */}
           <div className="lg:col-span-1 w-80">
             <div className="bg-white rounded-3xl p-8 h-full  shadow-md border border-gray-200 relative overflow-hidden">
@@ -142,16 +147,16 @@ export function ProductsPanel() {
 
        
 
-      {/* See all Products Link */}
-      {activeTab === "products" && (
-        <div className="mt-12 flex items-center text-gray-700 hover:text-gray-900 transition-colors cursor-pointer">
+   
+        <div className="mt-12 flex items-center text-gray-700 hover:text-gray-900 transition-colors cursor-pointer px-8">
            <div className="w-7 h-7 mr-4 bg-gray-800 rounded-2xl flex items-center justify-center">
            <ChevronRight className="w-5 h-5 text-white" />
            </div>
           <span className="font-medium text-neutral-700">See all Products..</span>
         </div>
-      )}
-    </div>
+      
+    
+    
   </section>
       
   )

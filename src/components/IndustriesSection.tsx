@@ -7,13 +7,13 @@ import { IndustriesPanel } from "@/components/industries/IndustriesPanel"
 import { SolutionsPanel } from "@/components/industries/SolutionsPanel"
 
 export function IndustriesSection() {
-  const [activeTab, setActiveTab] = useState("products")
+  const [activeTab, setActiveTab] = useState("industries")
   const fadeRef = useScrollFadeIn({ threshold: 0.1 })
 
   const tabs = [
     { id: "industries", label: "Industries" },
-    { id: "solutions", label: "Solutions" },
-    { id: "products", label: "Products" }
+    { id: "products", label: "Products" },
+    { id: "solutions", label: "Solutions" }
   ]
 
   const filters = [
@@ -31,7 +31,7 @@ export function IndustriesSection() {
           : 'opacity-0 translate-y-16'
       }`}
     >
-      <div className="border-b border-gray-200 bg-white my-10 ">
+      <div className="border-b border-gray-200 bg-white my- ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center  h-12 ">
           <div className="flex space-x-8">
             {tabs.map((tab) => (
@@ -53,17 +53,19 @@ export function IndustriesSection() {
           <button className="bg-gray-900 text-sm text-white px-3 py-1.5 rounded-lg font-medium hover:bg-gray-800 transition-colors">Request Demo</button>
         </div>
       </div>
+
+
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
-
-        {/* Main Title */}
-        <div className="text-start mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            Explore tools for bringing your vision to life
-          </h2>
+        <div id="industries" className="scroll-mt-24">
+          <IndustriesPanel />
         </div>
+      </div>
+      
 
-        {/* Continuous sections; tabs just scroll into view */}
+
+      {/* Products section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="products" className="scroll-mt-24">
           <ProductsPanel />
         </div>
@@ -74,13 +76,6 @@ export function IndustriesSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* SolutionsPanel already contains id="solutions" for scrolling */}
           <SolutionsPanel />
-        </div>
-      </div>
-
-      {/* Return to constrained width for the next section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="industries" className="scroll-mt-24">
-          <IndustriesPanel />
         </div>
       </div>
 

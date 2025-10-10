@@ -87,6 +87,7 @@ export function SolutionsPanel() {
 
   return (
     <section id="solutions" className="py-16 h-full">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="mb-6">
         <h2 className="text-4xl font-extrabold text-neutral-900">Find solutions for putting your ideas into action</h2>
@@ -125,7 +126,7 @@ export function SolutionsPanel() {
                 onClick={() => setOpen(open === sln.id ? '' : sln.id)}
                 className="w-full ml-6 flex items-center justify-between py-4 text-gray-900 font-bold"
               >
-                <span className="text-base">{sln.title}</span>
+                <span className="text-base ">{sln.title}</span>
                 <span className="text-xl leading-none">{open === sln.id ? <ChevronUp /> : <ChevronDown />}</span>
               </button>
 
@@ -151,6 +152,7 @@ export function SolutionsPanel() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   )
