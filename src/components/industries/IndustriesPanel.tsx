@@ -45,7 +45,7 @@ export function IndustriesPanel() {
       
         <div className="text-start mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
-          Discover what's happening on Azure
+          Discover what&apos;s happening on Azure
           </h2>
         </div>
 

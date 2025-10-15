@@ -46,7 +46,7 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your next project? Get in touch with our team and let's discuss 
+              Ready to start your next project? Get in touch with our team and let&apos;s discuss 
               how we can help bring your ideas to life.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function Contact() {
               
               {submitStatus === 'success' && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                  Thank you for your message! We'll get back to you soon.
+                  Thank you for your message! We&apos;ll get back to you soon.
                 </div>
               )}
 
@@ -155,7 +155,7 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in touch</h2>
               <p className="text-lg text-gray-600 mb-8">
-                We're here to help and answer any question you might have. 
+                We&apos;re here to help and answer any question you might have. 
                 We look forward to hearing from you.
               </p>
 

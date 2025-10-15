@@ -331,7 +331,7 @@ export function UseCaseChannels() {
                         </div>
                         <h3 className="text-lg font-medium text-gray-900 mb-2">Welcome to {selectedCase.title}</h3>
                         <p className="text-gray-600 text-sm max-w-sm">
-                          Ask me anything about {selectedCase.title.toLowerCase()} and I'll help you understand how we can assist your business.
+                          Ask me anything about {selectedCase.title.toLowerCase()} and I&apos;ll help you understand how we can assist your business.
                         </p>
                       </div>
                     </div>

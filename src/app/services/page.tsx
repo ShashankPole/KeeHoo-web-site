@@ -183,7 +183,7 @@ export default function Services() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's discuss your project requirements and how we can help you achieve your goals.
+            Let&apos;s discuss your project requirements and how we can help you achieve your goals.
           </p>
           <Link
             href="/contact"
