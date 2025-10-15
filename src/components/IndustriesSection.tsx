@@ -31,7 +31,7 @@ export function IndustriesSection() {
           : 'opacity-0 translate-y-16'
       }`}
     >
-      <div className="border-b border-gray-200 bg-white my- ">
+      <div className="border-b border-gray-200 bg-white  ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center  h-12 ">
           <div className="flex space-x-8">
             {tabs.map((tab) => (
@@ -56,7 +56,7 @@ export function IndustriesSection() {
 
 
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div id="industries" className="scroll-mt-24">
           <IndustriesPanel />
         </div>
@@ -65,7 +65,7 @@ export function IndustriesSection() {
 
 
       {/* Products section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto ">
         <div id="products" className="scroll-mt-24">
           <ProductsPanel />
         </div>
@@ -73,7 +73,7 @@ export function IndustriesSection() {
 
       {/* Full-width white band for Solutions */}
       <div className="bg-white py-2 my-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           {/* SolutionsPanel already contains id="solutions" for scrolling */}
           <SolutionsPanel />
         </div>

@@ -30,17 +30,16 @@ export default function Home() {
               <span className="font-extrabold">Your</span>  <span className="font-extrabold">Success</span>,<span className="font-extrabold">Our</span>    <PointerHighlight
            
             containerClassName="inline-block mx-1"
-          >  <span className="font-extrabold">Promise</span></PointerHighlight>
+          >  <span className="font-extrabold">Promise.</span></PointerHighlight>
             </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Strategic tech partnership for C-level executives who envision transformative solutions. 
-              We turn your data and AI ambitions into execution excellence.
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              We revolutionize business performance by harnessing enterprise data, deploying intelligent automation, and scaling AI capabilities — creating unstoppable competitive momentum
             </p>
           </div>
         </div>
         <div 
           ref={useCaseRef.ref}
-          className={`min-h-full py-12 transition-all duration-1500 ease-out delay-500 ${
+          className={`min-h-full pt-12 transition-all duration-1500 ease-out delay-500 ${
             useCaseRef.isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'

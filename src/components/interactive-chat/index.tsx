@@ -121,7 +121,7 @@ export function InteractiveChat() {
 
   return (
    
-    <section className="max-w-7xl mx-auto px-6 pb-24">
+    <section className="max-w-7xl mx-auto px-6 ">
     
       <div className="bg-black rounded-3xl p-4 ">
       <div className="">

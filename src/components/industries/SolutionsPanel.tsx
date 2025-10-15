@@ -12,29 +12,30 @@ type Solution = {
 }
 
 const businessSolutions: Solution[] = [
-  {
-    id: "erp",
-    title: "ERP",
-    headline: "Simplify operations. Amplify growth",
-    description:
-      "Integrate and automate your business processes—finance, operations, HR, and supply chain—within a single unified system for better control and real-time insights.",
-    image: "/images/technology-bg.png",
-  },
+  
   {
     id: "crm",
-    title: "CRM",
+    title: "CRM (Customer Relationship Management)",
+    headline: "The Intelligent Backbone of Tomorrow's Enterprise",
+    description:
+      "Elevate customer experience with omnichannel CRM solutions that track every interaction across the buyer journey. Deploy targeted campaigns, automate follow-ups, and deliver personalized service that transforms satisfied customers into brand advocates and revenue multipliers.",
+    image: "/images/crm.png",
+  },
+  {
+    id: "erp",
+    title: "ERP (Enterprise Resource Planning)",
     headline: "Connect smarter. Serve better. Grow faster.",
     description:
-      "Build stronger customer connections by centralizing sales, marketing, and service data—empowering teams to deliver personalized and efficient experiences.",
-    image: "/images/retail-bg.png",
+      "Where AI meets operations. Where insights become action. Build an adaptive organization that evolves with market demands. Your competitive edge isn't just about doing things better—it's about doing better things.",
+    image: "/images/erp.png",
   },
   {
     id: "scm",
-    title: "SCM",
+    title: "SCM (Supply Chain Management)",
     headline: "Connect smarter. Serve better. Grow faster.",
     description:
       "Build stronger customer connections by centralizing sales, marketing, and service data—empowering teams to deliver personalized and efficient experiences.",
-    image: "/images/manufacturing-bg.png",
+    image: "/images/scm.png",
   },
 ]
 
@@ -45,35 +46,35 @@ export function SolutionsPanel() {
   const technicalSolutions: Solution[] = [
     {
       id: "agentic-ai",
-      title: "Agentic AI",
-      headline: "Simplify operations. Amplify growth",
+      title: "Data General Intelligence",
+      headline: "Future-Ready Intelligence Infrastructure",
       description:
-        "Integrate and automate your business processes—finance, operations, HR, and supply chain—within a single unified system for better control and real-time insights.",
-      image: "/images/technology-bg.png",
+        "Modernize your analytics stack with AI-driven automation, federated governance, and self-service capabilities. Democratize data while maintaining enterprise control.",
+      image: "/images/datageneral.png",
     },
     {
       id: "data-engineering",
-      title: "Data Engineering",
-      headline: "Transform data into business intelligence.",
+      title: "Modern Enterprise Data Ecosystem",
+      headline: "Your Single Source of Truth, Built for Speed",
       description:
-        "Design and maintain scalable data pipelines that empower analytics, AI models, and real-time decision-making.",
-      image: "/images/manufacturing-bg.png",
+        "Scalable architectures that ingest, process, and deliver data where decisions happen. Real-time dashboards. Predictive models. Analytics that evolve with your business. All from one unified platform.",
+      image: "/images/dataengineering.png",
     },
     {
       id: "cloud",
-      title: "Cloud",
-      headline: "Scale faster. Operate smarter.",
+      title: "Hybrid & Multi-Cloud Solutions",
+      headline: "Freedom to Innovate Without Vendor Lock-In.",
       description:
-        "Adopt secure, cost-efficient cloud infrastructure—public, private, or hybrid—to maximize uptime and performance.",
-      image: "/images/retail-bg.png",
+        "Strategic cloud adoption that balances performance, cost, and compliance. Migrate legacy systems. Build cloud-native applications. Optimize workloads across AWS, Azure, and GCP based on business needs—not vendor contracts.",
+      image: "/images/cloud.png",
     },
     {
       id: "web-app",
-      title: "Web Application",
-      headline: "Modern apps. Real impact.",
+      title: "Custom Enterprise Applications",
+      headline: "Software Engineered for Your Competitive Edge",
       description:
-        "Build responsive, high-performance web applications using cutting-edge frameworks and scalable backends.",
-      image: "/images/media-bg.png",
+        "Purpose-built web applications that solve problems off-the-shelf software can't. From B2B portals to workforce automation—secure, scalable, and designed for rapid iteration",
+      image: "/images/webapplications.png",
     },
   ]
 
@@ -98,7 +99,7 @@ export function SolutionsPanel() {
         <div className="inline-flex gap-4 rounded-xl ">
           <button
             onClick={() => setFilter('business')}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-gray-200 ${
+            className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors border border-gray-200 ${
               filter === 'business' ? 'bg-gray-900 text-white' : 'text-gray-700'
             }`}
           >
@@ -106,7 +107,7 @@ export function SolutionsPanel() {
           </button>
           <button
             onClick={() => setFilter('technical')}
-            className={`px-4 py-2 rounded-lg bg-[#F5F5F5] text-sm font-semibold transition-colors border border-gray-200 ${
+            className={`px-4 py-2 rounded-lg bg-[#F5F5F5] text-xs font-semibold transition-colors border border-gray-200 ${
               filter === 'technical' ? 'bg-black text-white' : 'text-gray-700'
             }`}
           >
@@ -120,7 +121,7 @@ export function SolutionsPanel() {
         {/* Left: Accordion */}
         <div>
           {activeSolutions.map((sln) => (
-            <div key={sln.id} className="border-b border-gray-200">
+            <div key={sln.id} className="border-b border-gray-200 ">
               {/* Row title */}
               <button
                 onClick={() => setOpen(open === sln.id ? '' : sln.id)}
@@ -132,7 +133,7 @@ export function SolutionsPanel() {
 
               {/* Panel */}
               {open === sln.id && (
-                <div className="pl-6 pb-6 border-l-3  w-4/5 border-black flex flex-col gap-4">
+                <div className=" border-l-3  w-4/5 border-black flex flex-col gap-4 px-6 p-4">
                   <div className="text-sm font-semibold text-gray-700 mb-2">{sln.headline}</div>
                   <p className="text-xs text-gray-600 max-w-xl mb-3 leading-5 font-normal">{sln.description}</p>
                   <a href="#" className="text-xs font-semibold text-gray-900 inline-flex items-center gap-1">

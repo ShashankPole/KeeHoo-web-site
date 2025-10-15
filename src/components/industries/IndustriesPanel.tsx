@@ -25,7 +25,7 @@ const industries: Industry[] = [
     title: "Ecommerce",
     description:
       "Scale your online business with advanced analytics, automated marketing campaigns, and seamless payment integrations that boost conversion rates.",
-    imageSrc: "/images/media-bg.png",
+    imageSrc: "/images/ecommerce-bg.png",
     buttonText: "Explore",
   },
   {
@@ -40,7 +40,7 @@ const industries: Industry[] = [
 
 export function IndustriesPanel() {
   return (
-    <section id="industries" className="py-16 ">
+    <section id="industries" className="py-10 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
         <div className="text-start mb-12">
@@ -70,7 +70,7 @@ export function IndustriesPanel() {
                 <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                   {industry.description}
                 </p>
-                <button className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
+                <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors text-sm font-medium">
                   {industry.buttonText}
                 </button>
               </div>

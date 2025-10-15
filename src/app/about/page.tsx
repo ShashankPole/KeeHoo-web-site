@@ -40,7 +40,7 @@ export default function About() {
               </p>
               <p className="text-lg text-gray-600">
                 We believe in the power of technology to transform ideas into reality, 
-                and we're committed to delivering exceptional value to our clients through 
+                and we&apos;re committed to delivering exceptional value to our clients through 
                 every project we undertake.
               </p>
             </div>

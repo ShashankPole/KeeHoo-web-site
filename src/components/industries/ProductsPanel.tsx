@@ -108,19 +108,19 @@ export function ProductsPanel() {
 
       {/* Main Title */}
       <div className="text-start mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+          <h2 className="text-4xl font-bold text-gray-900 ">
             Explore tools for bringing your vision to life
           </h2>
         </div>
 
         
         {/* Filter Buttons */}
-        <div className="flex justify-start space-x-4 my-5">
+        <div className="flex justify-start space-x-4 mb-6">
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-4 py-2 rounded-lg font-semibold transition-colors border border-gray-200 ${
+              className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors border border-gray-200 ${
                 activeFilter === filter.id
                   ? "bg-gray-900 text-white"
                   : "bg-[#F5F5F5] text-gray-700 hover:bg-gray-300"
@@ -147,7 +147,7 @@ export function ProductsPanel() {
                     {featuredCardContent.description}
                   </p>
                 </div>
-                <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors self-start">
+                <button className="bg-gray-900 text-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors self-start">
                   Explore the product
                 </button>
               </div>
