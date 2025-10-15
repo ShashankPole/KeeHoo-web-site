@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
+import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
 import {  ChevronDown, ChevronUp } from "lucide-react"
 
 type Solution = {
@@ -42,6 +43,7 @@ const businessSolutions: Solution[] = [
 export function SolutionsPanel() {
   const [filter, setFilter] = useState<'business' | 'technical'>("business")
   const [open, setOpen] = useState<string>("erp")
+  const fadeRef = useScrollFadeIn({ threshold: 0.1 })
 
   const technicalSolutions: Solution[] = [
     {
@@ -87,7 +89,13 @@ export function SolutionsPanel() {
   const currentImage = activeSolutions.find(s => s.id === open)?.image || activeSolutions[0].image
 
   return (
-    <section id="solutions" className="py-16 h-full">
+    <section
+      id="solutions"
+      ref={fadeRef.ref}
+      className={`py-16 h-full transition-all duration-1500 ease-out ${
+        fadeRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+      }`}
+    >
        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="mb-6">
@@ -128,28 +136,31 @@ export function SolutionsPanel() {
                 className="w-full ml-6 flex items-center justify-between py-4 text-gray-900 font-bold"
               >
                 <span className="text-base ">{sln.title}</span>
-                <span className="text-xl leading-none">{open === sln.id ? <ChevronUp /> : <ChevronDown />}</span>
+                <span className={`text-xl leading-none transition-transform duration-300 ${open === sln.id ? 'rotate-180' : ''}`}>{open === sln.id ? <ChevronUp /> : <ChevronDown />}</span>
               </button>
 
-              {/* Panel */}
-              {open === sln.id && (
-                <div className=" border-l-3  w-4/5 border-black flex flex-col gap-4 px-6 p-4">
-                  <div className="text-sm font-semibold text-gray-700 mb-2">{sln.headline}</div>
-                  <p className="text-xs text-gray-600 max-w-xl mb-3 leading-5 font-normal">{sln.description}</p>
-                  <a href="#" className="text-xs font-semibold text-gray-900 inline-flex items-center gap-1">
-                    Learn more
-                  </a>
-                </div>
-              )}
+              {/* Panel with smooth expand/collapse */}
+              <div className={` border-l-3  w-4/5 border-black flex flex-col gap-4 px-6 p-4 overflow-hidden transition-all duration-500 ease-out ${open === sln.id ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-1'}`}>
+                <div className="text-sm font-semibold text-gray-700 mb-2">{sln.headline}</div>
+                <p className="text-xs text-gray-600 max-w-xl mb-3 leading-5 font-normal">{sln.description}</p>
+                <a href="#" className="text-xs font-semibold text-gray-900 inline-flex items-center gap-1">
+                  Learn more
+                </a>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Right: Preview image */}
         <div className="w-full">
-          <div className="rounded-[28px] overflow-hidden border border-gray-200 bg-gradient-to-tl from-neutral-600 to-neutral-900 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.25)] p-4">
+          <div key={open} className="rounded-[28px] overflow-hidden border border-gray-200 bg-gradient-to-tl from-neutral-600 to-neutral-900 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.25)] p-4 transition-all duration-500 ease-out animate-slide-in-right">
             <div className="rounded-[18px] overflow-hidden">
-              <img src={currentImage} alt="Solution preview" className="w-full h-[340px] object-cover" />
+              <img
+                key={open}
+                src={currentImage}
+                alt="Solution preview"
+                className="w-full h-[340px] object-cover object-center transition-opacity duration-500"
+              />
             </div>
           </div>
         </div>

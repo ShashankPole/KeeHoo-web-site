@@ -60,7 +60,7 @@ export function IndustriesPanel() {
                 <img
                   src={industry.imageSrc}
                   alt={industry.title}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover object-center rounded-2xl"
                 />
               </div>
               <div className="p-6">

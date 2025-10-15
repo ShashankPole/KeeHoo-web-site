@@ -166,3 +166,19 @@ button, a {
 .animate-slow-spin {
   animation: slow-spin 3s linear infinite;
 }
+
+/* Smooth slide-in from the right for solution preview image */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 500ms ease-out both;
+}
