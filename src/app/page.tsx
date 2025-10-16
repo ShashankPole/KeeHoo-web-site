@@ -50,12 +50,9 @@ export default function Home() {
       </section>
 
       <div 
-        ref={industriesRef.ref}
-        className={`pb-16 bg-indigo-50/30 transition-all duration-1500 ease-out delay-700 ${
-          industriesRef.isVisible 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-16'
-        }`}
+     
+        className={`pb-16 bg-indigo-50/30 transition-all duration-1500 ease-out delay-700 
+          `}
       >
         <IndustriesSection />
       </div>
