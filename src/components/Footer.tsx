@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-blue-400">KheeHoo</h3>
+            <h3 className="text-2xl font-bold text-blue-400">KeeHoo</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Empowering businesses with innovative solutions and cutting-edge technology 
               to drive growth and success in the digital age.
@@ -36,17 +36,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   Contact
                 </Link>
               </li>
@@ -71,7 +71,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-blue-400" />
-                <span className="text-gray-300 text-sm">info@kheehoo.com</span>
+                <span className="text-gray-300 text-sm">info@keehoo.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-blue-400" />
