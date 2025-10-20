@@ -16,7 +16,7 @@ const businessSolutions: Solution[] = [
   
   {
     id: "crm",
-    title: "CRM (Customer Relationship Management)",
+    title: "Customer Relationship Management (CRM)",
     headline: "The Intelligent Backbone of Tomorrow's Enterprise",
     description:
       "Elevate customer experience with omnichannel CRM solutions that track every interaction across the buyer journey. Deploy targeted campaigns, automate follow-ups, and deliver personalized service that transforms satisfied customers into brand advocates and revenue multipliers.",
@@ -24,7 +24,7 @@ const businessSolutions: Solution[] = [
   },
   {
     id: "erp",
-    title: "ERP (Enterprise Resource Planning)",
+    title: "Enterprise Resource Planning (ERP)",
     headline: "Connect smarter. Serve better. Grow faster.",
     description:
       "Where AI meets operations. Where insights become action. Build an adaptive organization that evolves with market demands. Your competitive edge isn't just about doing things better—it's about doing better things.",
@@ -32,7 +32,7 @@ const businessSolutions: Solution[] = [
   },
   {
     id: "scm",
-    title: "SCM (Supply Chain Management)",
+    title: "Supply Chain Management (SCM)",
     headline: "Connect smarter. Serve better. Grow faster.",
     description:
       "Build stronger customer connections by centralizing sales, marketing, and service data—empowering teams to deliver personalized and efficient experiences.",
@@ -98,25 +98,25 @@ export function SolutionsPanel() {
     >
        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
-      <div className="mb-6">
-        <h2 className="text-4xl font-extrabold text-neutral-900">Find solutions for putting your ideas into action</h2>
+      <div className="mb-6 text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 mb-8 w-2xl text-center mx-auto">Find solutions for putting your ideas into action</h2>
       </div>
 
       {/* Filters */}
-      <div className="mb-8">
+      <div className="mb-8 flex justify-center">
         <div className="inline-flex gap-4 rounded-xl ">
           <button
             onClick={() => setFilter('business')}
-            className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors border border-gray-200 ${
-              filter === 'business' ? 'bg-gray-900 text-white' : 'text-gray-700'
+            className={`px-5 py-2 rounded-xl text-xs font-semibold transition-colors  ${
+              filter === 'business' ? 'bg-primary-700 text-white' : 'text-primary-700 bg-[#DAE8F4]'
             }`}
           >
             Business Solutions
           </button>
           <button
             onClick={() => setFilter('technical')}
-            className={`px-4 py-2 rounded-lg bg-[#F5F5F5] text-xs font-semibold transition-colors border border-gray-200 ${
-              filter === 'technical' ? 'bg-black text-white' : 'text-gray-700'
+            className={`px-5 py-2 rounded-xl text-xs font-semibold transition-colors ${
+              filter === 'technical' ? 'bg-primary-700 text-white' : 'text-primary-700 bg-[#DAE8F4]'
             }`}
           >
             Technical Solutions
@@ -125,7 +125,7 @@ export function SolutionsPanel() {
       </div>
 
       {/* Layout */}
-      <div className="grid grid-cols-1 px-10 lg:grid-cols-2 gap-20  items-start">
+      <div className="grid grid-cols-1 px-10 lg:grid-cols-2 gap-20 items-start">
         {/* Left: Accordion */}
         <div>
           {activeSolutions.map((sln) => (
@@ -141,9 +141,9 @@ export function SolutionsPanel() {
 
               {/* Panel with smooth expand/collapse */}
               <div className={` border-l-3  w-4/5 border-black flex flex-col gap-4 px-6 p-4 overflow-hidden transition-all duration-500 ease-out ${open === sln.id ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-1'}`}>
-                <div className="text-sm font-semibold text-gray-700 mb-2">{sln.headline}</div>
+                {/* <div className="text-sm font-semibold text-gray-700 mb-2">{sln.headline}</div> */}
                 <p className="text-xs text-gray-600 max-w-xl mb-3 leading-5 font-normal">{sln.description}</p>
-                <a href="#" className="text-xs font-semibold text-gray-900 inline-flex items-center gap-1">
+                <a href="#" className="text-xs font-semibold text-primary-700 inline-flex items-center gap-1">
                   Learn more
                 </a>
               </div>

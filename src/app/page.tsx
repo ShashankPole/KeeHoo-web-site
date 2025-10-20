@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { UseCaseChannels } from '@/components/UseCaseChannels';
-import { IndustriesSection } from '@/components/IndustriesSection';
-import { CallToActionSection } from '@/components/CallToActionSection';
+import { UseCaseChannels } from "@/components/UseCaseChannels";
+import { IndustriesSection } from "@/components/IndustriesSection";
+import { StatisticsSection } from "@/components/StatisticsSection";
+import { CallToActionSection } from "@/components/CallToActionSection";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
-import { useScrollFadeIn } from '@/lib/useScrollFadeIn';
-import { InteractiveChat } from '@/components/interactive-chat';
+import { useScrollFadeIn } from "@/lib/useScrollFadeIn";
+import { InteractiveChat } from "@/components/interactive-chat";
 
 export default function Home() {
   const heroRef = useScrollFadeIn({ threshold: 0.2 });
@@ -16,57 +17,58 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section 
+      <section
         ref={heroRef.ref}
-        className={`bg-[#ffffff] py-12 transition-all duration-1500 ease-out ${
-          heroRef.isVisible 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-16'
+        className={`bg-gradient-to-b from-[#ffffff] to-[#F3F2F1] py-12 transition-all duration-1500 ease-out ${
+          heroRef.isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-16"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-2xl md:text-6xl font-extrabold text-neutral-900 mb-6">
-              <span className="font-extrabold">Your</span>  <span className="font-extrabold">Success</span>,<span className="font-extrabold">Our</span>    <PointerHighlight
-           
-            containerClassName="inline-block mx-1"
-          >  <span className="font-extrabold">Promise.</span></PointerHighlight>
+              <span className="font-extrabold bg-gradient-to-r from-primary-600 to-blue-500  bg-clip-text text-transparent">
+                Your Success, Our
+              </span>{" "}
+              <PointerHighlight containerClassName="inline-block mx-1">
+                {" "}
+                <span className="font-extrabold bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+                  Promise.
+                </span>
+              </PointerHighlight>
             </h1>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              We revolutionize business performance by harnessing enterprise data, deploying intelligent automation, and scaling AI capabilities — creating unstoppable competitive momentum
+              We revolutionize business performance by harnessing enterprise
+              data, deploying intelligent automation, and scaling AI
+              capabilities — creating unstoppable competitive momentum
             </p>
           </div>
         </div>
-        <div 
+        <div
           ref={useCaseRef.ref}
           className={`min-h-full pt-12 transition-all duration-1500 ease-out delay-500 ${
-            useCaseRef.isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-16'
+            useCaseRef.isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-16"
           }`}
         >
           <InteractiveChat />
         </div>
       </section>
 
-      <div 
-     
-        className={`pb-16 bg-indigo-50/30 transition-all duration-1500 ease-out delay-700 
+      <div
+        className={` transition-all duration-1500 ease-out delay-700 
           `}
       >
         <IndustriesSection />
       </div>
-
-      {/* <div 
-        ref={ctaRef.ref}
-        className={`transition-all duration-1500 ease-out delay-900  ${
-          ctaRef.isVisible 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-16'
-        }`}
+      <div
+        className={` bg-[linear-gradient(to_right,_#FFFFFF,_#F4FAFD,_#F3FAFE)] transition-all duration-1500 ease-out delay-700 
+       `}
       >
-        <CallToActionSection />
-      </div> */}
+        <StatisticsSection />
+      </div>
     </>
   );
 }

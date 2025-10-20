@@ -59,7 +59,7 @@ export default function Services() {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: 'bg-blue-100 text-blue-600',
+      blue: 'bg-primary-100 text-primary-600',
       green: 'bg-green-100 text-green-600',
       purple: 'bg-purple-100 text-purple-600',
       orange: 'bg-orange-100 text-orange-600',
@@ -100,14 +100,14 @@ export default function Services() {
                 <ul className="space-y-2 mb-8">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-primary-600 rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                  className="inline-flex items-center text-primary-600 hover:text-blue-700 font-semibold transition-colors"
                 >
                   Learn More
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 1
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Discovery</h3>
@@ -144,7 +144,7 @@ export default function Services() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 2
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Planning</h3>
@@ -154,7 +154,7 @@ export default function Services() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 3
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Development</h3>
@@ -164,7 +164,7 @@ export default function Services() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 4
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Launch</h3>
@@ -177,17 +177,17 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-primary-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss your project requirements and how we can help you achieve your goals.
           </p>
           <Link
             href="/contact"
-            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center"
+            className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center"
           >
             Start Your Project
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

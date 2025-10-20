@@ -11,9 +11,9 @@ interface SidebarProps {
 
 export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }: SidebarProps) {
   return (
-    <div className="chat-sidebar w-72 bg-[#F5F5F5] border-r border-[#e5e5e5]  flex flex-col">
+    <div className="chat-sidebar w-72 bg-[#ffffff] border-r border-[#e5e5e5]  flex flex-col">
       <div className="chat-sidebar-header">
-        <div className="chat-sidebar-title text-2xl border-b border-[#e5e5e5] h-16 flex items-center justify-center text-center  font-extrabold text-gray-800 mb-6">
+        <div className="chat-sidebar-title text-2xl border-b border-[#e5e5e5] h-16 flex items-center justify-center text-center  font-extrabold text-secondary-600 mb-6">
           Keehoo AI
         </div>
         <ul className="channels-list space-y-2 px-6">
@@ -26,14 +26,20 @@ export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }:
                 onClick={() => onChannelSwitch(index)}
                 className={`channel-item flex items-center gap-4 p-3 rounded-xl cursor-pointer transition-all duration-200 ${
                   currentChannel === index
-                    ? "bg-[#EAEAEA] text-gray-800"
-                    : "bg-[#F5F5F5] text-gray-600 hover:bg-gray-50"
+                    ? "bg-primary-600 text-white"
+                    : "bg-white text-gray-600 hover:bg-gray-50"
                 }`}
               >
-                <span className="channel-icon bg-neutral-100/80 p-1 rounded-md">{IconComponent && <IconComponent className="w-5 h-5" />}</span>
+                <span className={`channel-icon p-1 rounded-md ${
+                  currentChannel === index ? "bg-white/20" : "bg-white"
+                }`}>{IconComponent && <IconComponent className={`w-5 h-5 ${
+                  currentChannel === index ? "text-white" : ""
+                }`} />}</span>
                 <div className="flex-1 min-w-0">
                   <div className="channel-name text-sm font-semibold truncate">{channel.name}</div>
-                  <div className="channel-subtitle text-xs text-gray-500 truncate mt-0.5">
+                  <div className={`channel-subtitle text-xs truncate mt-0.5 ${
+                    currentChannel === index ? "text-white/80" : "text-gray-500"
+                  }`}>
                     {channel.subtitle}
                   </div>
                 </div>

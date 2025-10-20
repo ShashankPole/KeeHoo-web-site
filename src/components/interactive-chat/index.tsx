@@ -123,10 +123,10 @@ export function InteractiveChat() {
    
     <section className="max-w-7xl mx-auto px-6 ">
     
-      <div className="bg-black rounded-3xl p-4 ">
+      <div className=" bg-gradient-to-r from-primary-900  to-primary-600 rounded-4xl p-2.5 ">
       <div className="">
       
-            <div className="flex h-[800px]  rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-lg">
+            <div className="flex h-[800px]  rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-lg">
               {/* Sidebar */}
               <Sidebar
                 channels={channels}
@@ -138,9 +138,9 @@ export function InteractiveChat() {
               {/* Main Chat Area */}
               <div className="chat-main flex-1 flex flex-col bg-white">
                 {/* Header */}
-                <div className="chat-header border-b border-gray-200 px-6 h-16 flex items-center justify-between bg-[#F5F5F5]">
+                <div className="chat-header border-b border-gray-200 px-6 h-16 flex items-center justify-between bg-white">
                   <div className="chat-header-left flex items-center gap-3">
-                    <div className="channel-header-icon text-primary bg-neutral-200 p-1 rounded-md">{renderIcon(channels[currentChannel].icon)}</div>
+                    <div className="channel-header-icon text-primary bg-white p-1 rounded-md">{renderIcon(channels[currentChannel].icon)}</div>
                     <div className="channel-header-info">
                       <h3 className="text-md font-semibold text-gray-900">{channels[currentChannel].name}</h3>
                       <p className="text-xs text-gray-600">{channels[currentChannel].subtitle}</p>

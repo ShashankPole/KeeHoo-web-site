@@ -15,7 +15,7 @@ interface ChatInputProps {
 
 export function ChatInput({ value, isTyping, onChange, onSend, onKeyPress }: ChatInputProps) {
   return (
-    <div className="chat-input-area px-12 py-5">
+    <div className="chat-input-area px-12 py-5 bg-neutral-100">
       <div className="input-wrapper flex gap-3 items-center  border border-neutral-200 py-2 bg-white rounded-3xl shadow-lg px-6">
         <Input
           value={value}
@@ -29,7 +29,7 @@ export function ChatInput({ value, isTyping, onChange, onSend, onKeyPress }: Cha
           onClick={onSend}
           disabled={!value.trim() || isTyping}
           size="icon"
-          className="shrink-0 h-8 w-8 bg-gray-800 hover:bg-gray-700 text-white rounded-lg"
+          className="shrink-0 h-10 w-10 bg-primary-700 flex items-center justify-center hover:bg-primary-500 text-white rounded-full"
         >
           <Send className="w-4 h-4" />
         </Button>

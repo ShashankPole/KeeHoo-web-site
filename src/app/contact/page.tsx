@@ -134,7 +134,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+                  className="w-full bg-primary-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <>
@@ -161,8 +161,8 @@ export default function Contact() {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <Mail className="text-blue-600" size={24} />
+                  <div className="bg-primary-100 p-3 rounded-lg">
+                    <Mail className="text-primary-600" size={24} />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>

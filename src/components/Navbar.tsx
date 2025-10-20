@@ -19,8 +19,8 @@ export default function Navbar() {
   }, []);
 
   const navigation = [
-    { name: 'About', href: '/' },
-    { name: 'Contact', href: '/' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/' },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="flex items-center ">
             <Link href="/" className="flex-shrink-0 flex items-center">
             <img src="/keehoo.svg" alt="KeeHoo Logo" className="h-7 w-7 mr-3 "/>
-              <span className="text-2xl font-extrabold text-neutral-800 ">KeeHoo</span>
+              <span className="text-2xl font-extrabold text-secondary-600 ">KeeHoo</span>
             </Link>
           </div>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-neutral-800 hover:text-neutral-600 px-2 py-2 tracking-wider text-sm font-bold transition-colors duration-200"
+                className="text-primary-800 hover:text-neutral-600 px-2 py-2 tracking-wider text-sm font-bold transition-colors duration-200"
               >
                 {item.name}
               </Link>

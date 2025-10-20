@@ -1,5 +1,5 @@
 import { forwardRef } from "react"
-import { Info, Atom } from "lucide-react"
+import { Info, Atom, ArrowRight } from "lucide-react"
 import type { Message } from "./types"
 
 interface ChatMessagesProps {
@@ -30,7 +30,7 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
   return (
     <div
       ref={ref}
-      className="chat-messages flex-1 overflow-y-auto px-16 py-6 space-y-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      className="chat-messages bg-neutral-100 flex-1 overflow-y-auto px-16 py-6 space-y-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
     >
       {messages.map((message, index) => (
         <div
@@ -40,7 +40,7 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
           }`}
         >
           {message.type === "user" && (
-            <div className="message-content p-2 px-4 rounded-xl text-sm leading-relaxed bg-[#F7F7F7] text-black border border-[#E0E0E0] shadow-sm">
+            <div className="message-content p-2 px-4 rounded-xl text-sm leading-relaxed bg-white text-black border border-primary-500 shadow-sm">
               <div className="whitespace-pre-wrap">{message.content}</div>
             </div>
           )}
@@ -56,7 +56,7 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
                   <span className="font-semibold text-neutral-800">keehoo ai</span>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-[#F7F7F7] shadow-sm p-6">
+                <div className="rounded-xl border border-primary-500 bg-white shadow-sm p-6">
                   {title && <h4 className="text-lg font-semibold text-gray-900 mb-3">{title}</h4>}
                   <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
                     {paragraphs.map((p, i) => (
@@ -72,14 +72,15 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
                       <Info className="w-3 h-3" />
                       <span>Based on keehoo case studies & client implementations</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <a
                         href="https://public.tableau.com/app/profile/valerie1556/viz/DataforaCause-GlobalPeaceScores/DASHBOARD"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 rounded-lg text-white bg-black hover:bg-gray-700 text-sm"
+                        className="px-4 py-2 rounded-lg text-white bg-primary-600 hover:bg-primary-700 text-sm flex items-center gap-2"
                       >
-                        See Demo
+                        View Demo 
+                        <ArrowRight className="w-4 h-4 -rotate-40" />
                       </a>
                     </div>
                   </div>

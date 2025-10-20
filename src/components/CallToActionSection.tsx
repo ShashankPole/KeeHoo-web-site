@@ -146,7 +146,7 @@ export function CallToActionSection() {
           <span className="text-orange-500">Easier</span>
         </h2>
         
-        <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200 shadow-lg">
+        <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200 shadow-lg">
           Get Started
         </button>
       </div>

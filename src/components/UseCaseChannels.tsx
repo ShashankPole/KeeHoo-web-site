@@ -48,8 +48,8 @@ const useCases: UseCase[] = [
     title: "Data Orchestration",
     description: "Coordinate and manage your data pipelines efficiently",
     icon: <RefreshCw className="h-5 w-5" />,
-    color: "text-blue-600",
-    bgColor: "bg-blue-600",
+    color: "text-primary-600",
+    bgColor: "bg-primary-600",
   },
   {
     id: "predictive",
@@ -345,7 +345,7 @@ export function UseCaseChannels() {
                           <div
                             className={`max-w-[80%] p-3 rounded-lg ${
                               msg.role === 'user'
-                                ? 'bg-indigo-600 text-white'
+                                ? 'bg-primary-600 text-white'
                                 : 'bg-gray-100 text-gray-800'
                             }`}
                           >
