@@ -3,18 +3,26 @@
 import React from "react"
 import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
 
-type StatCard = {
+type StatCardStat = {
   id: string
-  type: "stat" | "testimonial"
-  value?: string
-  label?: string
-  quote?: string
-  author?: {
+  type: "stat"
+  value: string
+  label: string
+  variant: "blue" | "dark-blue" | "gray"
+}
+
+type StatCardTestimonial = {
+  id: string
+  type: "testimonial"
+  quote: string
+  author: {
     name: string
     position: string
   }
   variant: "blue" | "dark-blue" | "gray"
 }
+
+type StatCard = StatCardStat | StatCardTestimonial
 
 const statCards: StatCard[] = [
   {
@@ -86,7 +94,7 @@ export function StatisticsSection() {
   return (
     <section 
       ref={fadeRef.ref}
-      className={`py-10 pb-14 transition-all duration-1500 ease-out ${
+      className={`py-16 bg-white transition-all duration-1500 ease-out ${
         fadeRef.isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-16'

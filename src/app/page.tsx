@@ -58,13 +58,13 @@ export default function Home() {
       </section>
 
       <div
-        className={` transition-all duration-1500 ease-out delay-700 
+        className={`pb-16 transition-all duration-1500 ease-out delay-700 
           `}
       >
         <IndustriesSection />
       </div>
       <div
-        className={` bg-[linear-gradient(to_right,_#FFFFFF,_#F4FAFD,_#F3FAFE)] transition-all duration-1500 ease-out delay-700 
+        className={` bg-indigo-50/30 transition-all duration-1500 ease-out delay-700 
        `}
       >
         <StatisticsSection />

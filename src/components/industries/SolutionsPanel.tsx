@@ -107,7 +107,7 @@ export function SolutionsPanel() {
         <div className="inline-flex gap-4 rounded-xl ">
           <button
             onClick={() => setFilter('business')}
-            className={`px-5 py-2 rounded-xl text-xs font-semibold transition-colors  ${
+            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-colors  ${
               filter === 'business' ? 'bg-primary-700 text-white' : 'text-primary-700 bg-[#DAE8F4]'
             }`}
           >
@@ -115,7 +115,7 @@ export function SolutionsPanel() {
           </button>
           <button
             onClick={() => setFilter('technical')}
-            className={`px-5 py-2 rounded-xl text-xs font-semibold transition-colors ${
+            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-colors ${
               filter === 'technical' ? 'bg-primary-700 text-white' : 'text-primary-700 bg-[#DAE8F4]'
             }`}
           >

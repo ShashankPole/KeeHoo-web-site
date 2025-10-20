@@ -31,6 +31,7 @@ export function IndustriesSection() {
           : 'opacity-0 translate-y-16'
       }`}
     >
+      
       <div className="border-b border-gray-200    ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center  h-16 ">
           <div className="flex space-x-8 ">
