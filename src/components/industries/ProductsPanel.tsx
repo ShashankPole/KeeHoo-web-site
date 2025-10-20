@@ -3,6 +3,7 @@
 import React, {useRef, useState } from "react"
 import { Brain, Workflow, GitBranch, Database, Code, Globe, ChevronRight, Network, Shield, FileText, BarChart3, Users, Users2, RefreshCw, ShieldCheck, Zap, Link } from "lucide-react"
 import { useScrollFadeIn } from "@/lib/useScrollFadeIn"
+import { HoverEffect } from "../ui/card-hover-effect"
 
 type Product = {
   id: string
@@ -102,7 +103,9 @@ export function ProductsPanel() {
         : 'opacity-0 translate-y-16'
     }`}
   >
-      
+       {/* Optional hover effect row above the section without changing layout */}
+       {/* Keep layout intact; supply only data needed for hover visuals */}
+       {/* <HoverEffect items={getCurrentProducts().map(p => ({ title: p.title, description: p.description }))} /> */}
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      
 
@@ -182,33 +185,32 @@ export function ProductsPanel() {
           {/* Product Grid */}
           <div className="lg:col-span-2">
             <div className="grid grid-cols-3 gap-4">
-              {currentProducts.map((product, index) => (
-                <div
-                  key={product.id}
-                  className={`bg-white rounded-2xl p-6 shadow-md  border border-gray-200 hover:shadow-lg transition-all duration-300 ${
-                    fadeRef.isVisible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ 
-                    transitionDelay: `${index * 100}ms` 
-                  }}
-                >
-                  <div className="flex flex-col items-start space-x-4 gap-4">
-                    <div className="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center text-primary-100 flex-shrink-0">
-                      {product.icon}
-                    </div>
-                    <div className="flex-1 ">
-                      <h4 className="text-md font-bold text-gray-900 mb-2">
-                        {product.title}
-                      </h4>
-                      <p className="text-xs text-gray-600 leading-normal">
-                        {product.description}
-                      </p>
+              <HoverEffect
+                className="contents"
+                items={currentProducts.map((p) => ({
+                  title: p.title,
+                  description: p.description,
+                }))}
+                renderItem={({ item, idx, isHovered }) => (
+                  <div
+                    key={idx}
+                    className={`bg-white rounded-2xl p-6 shadow-md border border-gray-200 transition-all duration-300 h-48 ${
+                      fadeRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    } ${isHovered ? 'shadow-lg' : ''}`}
+                    style={{ transitionDelay: `${idx * 100}ms` }}
+                  >
+                    <div className="relative z-10 flex flex-col items-start space-x-4 gap-4">
+                      <div className="w-12 h-12 bg-primary-900 rounded-full flex items-center justify-center text-primary-100 flex-shrink-0">
+                        {currentProducts[idx].icon}
+                      </div>
+                      <div className="flex-1 ">
+                        <h4 className="text-md font-bold text-gray-900 mb-2">{item.title}</h4>
+                        <p className="text-xs text-gray-600 leading-normal line-clamp-3">{item.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )}
+              />
             </div>
           </div>
         </div>

@@ -99,7 +99,7 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
             </div>
             <span className="font-medium">keehoo ai</span>
           </div>
-          <div className="bg-[#F7F7F7] text-gray-900 p-4 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="bg-white text-gray-900 p-4 rounded-2xl border border-gray-200 shadow-sm">
             <div className="flex gap-1 items-center">
               <span className="w-2 h-2 bg-gray-700 rounded-full animate-bounce"></span>
               <span className="w-2 h-2 bg-gray-700 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></span>
