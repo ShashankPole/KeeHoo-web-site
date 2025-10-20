@@ -102,29 +102,36 @@ export function StatisticsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-            Successful companies use{" "}
-            <span className="text-gray-900 font-black">Keehoo</span>{" "}
-            solutions and{" "}
-            <span className="text-gray-900 font-black">products</span>.
+            Successful companies use Keehoo solutions and products.
           </h2>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {statCards.map((card, index) => (
-            <div
-              key={card.id}
-              className={`rounded-xl p-6 transition-all duration-500 ${
-                fadeRef.isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              } ${getCardStyles(card.variant)}`}
-              style={{ 
-                transitionDelay: `${index * 100}ms` 
-              }}
-            >
+        {/* Cards Grid with dynamic widths via CSS grid column spans */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+          {statCards.map((card, index) => {
+            const spanPattern = [
+              "md:col-span-1", // wide
+              "md:col-span-3", // wide
+              "md:col-span-2", // narrow
+              "md:col-span-3", // extra wide
+              "md:col-span-1", // extra wide
+              "md:col-span-2", // narrow
+            ]
+            const spanClass = spanPattern[index % spanPattern.length]
+            return (
+              <div
+                key={card.id}
+                className={`rounded-xl p-6 transition-all duration-500 h-60 ${
+                  fadeRef.isVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                } ${getCardStyles(card.variant)} ${spanClass}`}
+                style={{ 
+                  transitionDelay: `${index * 100}ms` 
+                }}
+              >
               {card.type === "stat" ? (
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl font-bold mb-2">
@@ -155,7 +162,8 @@ export function StatisticsSection() {
                 </div>
               )}
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

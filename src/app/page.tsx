@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       <div
-        className={`pb-16 transition-all duration-1500 ease-out delay-700 
+        className={` transition-all duration-1500 ease-out delay-700 
           `}
       >
         <IndustriesSection />
