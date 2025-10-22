@@ -14,6 +14,7 @@ export function Sidebar({ channels, currentChannel, autoLoop, onChannelSwitch }:
     <div className="chat-sidebar w-72 bg-[#ffffff] border-r border-[#e5e5e5]  flex flex-col">
       <div className="chat-sidebar-header">
         <div className="chat-sidebar-title text-2xl border-b border-[#e5e5e5] h-16 flex items-center justify-center text-center  font-extrabold text-secondary-600 mb-6">
+          <img src="/chat_logo.svg" alt="Keehoo AI" className="w-8 h-8 mr-2" />
           Keehoo AI
         </div>
         <ul className="channels-list space-y-2 px-6">

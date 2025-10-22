@@ -50,8 +50,8 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
             return (
               <div className="w-full ">
                 <div className="text-xs text-gray-600 mb-2 flex items-center gap-2">
-                  <div className="w-5 h-5  rounded-full  flex items-center justify-center">
-                    <Atom className="w-4 h-4 animate-slow-spin" />
+                  <div className="w-5 h-5 border border-secondary-600 p-0.5 shadow-2xl bg-white  rounded-full  flex items-center justify-center">
+                    <Atom className="w-5 h-5 animate-slow-spin  text-secondary-600" />
                   </div>
                   <span className="font-semibold text-neutral-800">keehoo ai</span>
                 </div>
@@ -94,8 +94,8 @@ export const ChatMessages = forwardRef<HTMLDivElement, ChatMessagesProps>(({ mes
       {isTyping && (
         <div className="typing-indicator mr-auto max-w-[80%]">
           <div className="text-xs text-gray-600 mb-2 flex items-center gap-2">
-            <div className="w-5 h-5  rounded-full flex items-center justify-center">
-              <Atom className="w-4 h-4 animate-slow-spin" />
+            <div className="w-5 h-5 border border-secondary-600 p-0.5 shadow-2xl bg-white rounded-full flex items-center justify-center">
+              <Atom className="w-4 h-4 animate-slow-spin text-secondary-600" />
             </div>
             <span className="font-medium">keehoo ai</span>
           </div>

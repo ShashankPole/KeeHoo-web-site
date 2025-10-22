@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center ">
             <Link href="/" className="flex-shrink-0 flex items-center">
-            <img src="/keehoo.svg" alt="KeeHoo Logo" className="h-7 w-7 mr-3 "/>
+            <img src="/keehoo_logo.svg" alt="KeeHoo Logo" className="h-7 w-7 mr-3 "/>
               <span className="text-2xl font-extrabold text-secondary-600 ">KeeHoo</span>
             </Link>
           </div>
