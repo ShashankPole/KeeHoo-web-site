@@ -28,14 +28,14 @@ const statCards: StatCard[] = [
   {
     id: "stat-1",
     type: "stat",
-    value: "60%",
-    label: "Lorem Ipsem Dolor",
+    value: "85%",
+    label: "Risk reduction",
     variant: "blue"
   },
   {
     id: "testimonial-1",
     type: "testimonial",
-    quote: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+    quote: "Continuous streaming analytics converts live events into actionable signals—powering alerts, adaptive routing, and instant business decisions.",
     author: {
       name: "John Doe",
       position: "CEO, Company"
@@ -45,31 +45,34 @@ const statCards: StatCard[] = [
   {
     id: "stat-2",
     type: "stat",
-    value: "45%",
-    label: "Lorem Ipsem Dolor",
+    value: "72%",
+    label: "Automation maturity",
     variant: "gray"
   },
   {
     id: "stat-3",
     type: "stat",
-    value: "35%",
-    label: "Lorem Ipsem Dolor",
+    value: "94%",
+    label: "Orchestration accuracy",
     variant: "gray"
-  },
-  {
-    id: "stat-4",
-    type: "stat",
-    value: "$23M+",
-    label: "Lorem Ipsem Dolor",
-    variant: "blue"
   },
   {
     id: "testimonial-2",
     type: "testimonial",
-    quote: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+    quote: "Unified orchestration layer automates data flow across systems, ensuring clean, consistent, and timely delivery from source to insight—without manual handoffs.",
     author: {
       name: "Jane Smith",
       position: "CTO, Company"
+    },
+    variant: "blue"
+  },
+  {
+    id: "testimonial-3",
+    type: "testimonial",
+    quote: "Autonomous agents orchestrate end-to-end workflows—triggering actions, resolving exceptions, and closing loops—so human teams only handle edge cases.",
+    author: {
+      name: "Mike Johnson",
+      position: "VP Engineering, Company"
     },
     variant: "gray"
   }
@@ -81,9 +84,9 @@ export function StatisticsSection() {
   const getCardStyles = (variant: string) => {
     switch (variant) {
       case "blue":
-        return "bg-primary-600 text-white"
+        return "bg-blue-500 text-white"
       case "dark-blue":
-        return "bg-primary-800 text-white"
+        return "bg-primary-600 text-white"
       case "gray":
         return "bg-gray-100 text-gray-900"
       default:
@@ -108,62 +111,127 @@ export function StatisticsSection() {
           </h2>
         </div>
 
-        {/* Cards Grid with dynamic widths via CSS grid column spans */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-          {statCards.map((card, index) => {
-            const spanPattern = [
-              "md:col-span-1", // wide
-              "md:col-span-3", // wide
-              "md:col-span-2", // narrow
-              "md:col-span-3", // extra wide
-              "md:col-span-1", // extra wide
-              "md:col-span-2", // narrow
-            ]
-            const spanClass = spanPattern[index % spanPattern.length]
-            return (
-              <div
-                key={card.id}
-                className={`rounded-xl p-6 transition-all duration-500 h-60 ${
-                  fadeRef.isVisible 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
-                } ${getCardStyles(card.variant)} ${spanClass}`}
-                style={{ 
-                  transitionDelay: `${index * 100}ms` 
-                }}
-              >
-              {card.type === "stat" ? (
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold mb-2">
-                    {card.value}
-                  </div>
-                  <div className="text-sm md:text-base font-medium opacity-90">
-                    {card.label}
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  <blockquote className="text-sm md:text-base leading-relaxed">
-                    "{card.quote}"
-                  </blockquote>
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-8 h-8 rounded-full ${
-                      card.variant === "gray" ? "bg-gray-300" : "bg-white/20"
-                    }`}></div>
-                    <div className="flex-1">
-                      <div className={`h-2 w-16 mb-1 ${
-                        card.variant === "gray" ? "bg-gray-300" : "bg-white/20"
-                      }`}></div>
-                      <div className={`h-1 w-12 ${
-                        card.variant === "gray" ? "bg-gray-300" : "bg-white/20"
-                      }`}></div>
-                    </div>
-                  </div>
-                </div>
-              )}
+        {/* Cards Grid with exact percentage widths from screenshot */}
+        <div className="max-w-5xl mx-auto">
+          {/* Row 1 */}
+          <div className="flex gap-5 mb-5">
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-blue-500 text-white"
+              style={{ 
+                width: '33%',
+                transitionDelay: '0ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="text-center h-full flex flex-col justify-center">
+                <div className="text-4xl md:text-7xl font-bold mb-2">85%</div>
+                <div className="text-sm md:text-base font-medium opacity-90">Risk reduction</div>
+              </div>
             </div>
-            )
-          })}
+            
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-primary-600 text-white"
+              style={{ 
+                width: '45%',
+                transitionDelay: '100ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="space-y-4 p-6">
+                <blockquote className="text-sm md:text-base leading-relaxed  ">
+                  "Continuous streaming analytics converts live events into actionable signals—powering alerts, adaptive routing, and instant business decisions."
+                </blockquote>
+                <div className="flex items-center space-x-3 ">
+                  <div className="w-8 h-8 rounded-full bg-white/80"></div>
+                  <div className="flex-1 ">
+                    <div className="h-2.5 w-36 mb-2 rounded-2xl bg-primary-900"></div>
+                    <div className="h-1.5 w-20 rounded-2xl bg-white/20"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-[#DAE8F4] text-neutral-700"
+              style={{ 
+                width: '25%',
+                transitionDelay: '200ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="text-center h-full flex flex-col justify-center">
+                <div className="text-4xl md:text-7xl font-bold mb-2">72%</div>
+                <div className="text-sm md:text-base font-medium opacity-90">Automation maturity</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2 */}
+          <div className="flex gap-5">
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-[#DAE8F4] text-neutral-700"
+              style={{ 
+                width: '25%',
+                transitionDelay: '300ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="text-center h-full flex flex-col justify-center">
+                <div className="text-4xl md:text-7xl font-bold mb-2">94%</div>
+                <div className="text-sm md:text-base font-medium opacity-90">Orchestration accuracy</div>
+              </div>
+            </div>
+            
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-blue-500 text-white"
+              style={{ 
+                width: '40%',
+                transitionDelay: '400ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="space-y-4">
+                <blockquote className="text-sm md:text-base leading-relaxed">
+                  "Unified orchestration layer automates data flow across systems, ensuring clean, consistent, and timely delivery from source to insight—without manual handoffs."
+                </blockquote>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 rounded-full bg-white/70"></div>
+                  <div className="flex-1 ">
+                    <div className="h-2.5 w-36 mb-2 rounded-2xl bg-amber-950/60"></div>
+                    <div className="h-1.5 w-20 rounded-2xl bg-amber-950/40"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div
+              className="rounded-xl p-6 transition-all duration-500 h-60 bg-gray-100 text-gray-900"
+              style={{ 
+                width: '50%',
+                transitionDelay: '500ms',
+                opacity: fadeRef.isVisible ? 1 : 0,
+                transform: fadeRef.isVisible ? 'translateY(0)' : 'translateY(32px)'
+              }}
+            >
+              <div className="space-y-4 px-4">
+                <blockquote className="text-sm md:text-base leading-relaxed">
+                  "Autonomous agents orchestrate end-to-end workflows—triggering actions, resolving exceptions, and closing loops—so human teams only handle edge cases."
+                </blockquote>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 rounded-full bg-gray-600/70"></div>
+                  <div className="flex-1 ">
+                    <div className="h-2.5 w-36 mb-2 rounded-2xl bg-gray-600/70"></div>
+                    <div className="h-1.5 w-20 rounded-2xl bg-gray-600/40"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

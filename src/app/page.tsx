@@ -28,12 +28,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-2xl md:text-6xl font-extrabold text-neutral-900 mb-6">
-              <span className="font-extrabold bg-gradient-to-r from-primary-600 to-blue-500  bg-clip-text text-transparent">
+              <span className="font-extrabold bg-gradient-to-r from-primary-700 to-blue-600  bg-clip-text text-transparent">
                 Your Success, Our
               </span>{" "}
               <PointerHighlight containerClassName="inline-block mx-1">
                 {" "}
-                <span className="font-extrabold bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+                <span className="font-extrabold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
                   Promise.
                 </span>
               </PointerHighlight>
