@@ -33,7 +33,7 @@ export function InteractiveChat() {
     if (autoLoop && messages.length === 0) {
       const timer = setTimeout(() => {
         showChannelDemo(currentChannel)
-      }, 1500)
+      }, 500)
       return () => clearTimeout(timer)
     }
   }, [currentChannel, autoLoop, messages.length])

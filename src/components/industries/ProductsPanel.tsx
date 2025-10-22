@@ -138,47 +138,53 @@ export function ProductsPanel() {
         <div ref={productsRef} id="products-section" className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-8 py-10" >
           {/* Large Featured Card */}
           <div className="lg:col-span-1 w-80">
-            <div className={`rounded-2xl p-8 h-full shadow-md border border-gray-200 relative overflow-hidden ${
-              activeFilter === "Workflow" 
-                ? "bg-cover bg-center bg-no-repeat" 
-                : "bg-white"
-            }`}
-            style={activeFilter === "Workflow" ? {
-              backgroundImage: "url('/images/workflow-bg.png')"
-            } : {}}
-            >
-              {/* Dark overlay for workflow card to ensure text readability */}
-              {activeFilter === "Workflow" && (
-                <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>
-              )}
+            {(() => {
+              const featuredBackgrounds: Record<string, string | null> = {
+                Workflow: "/images/workflow-bg.png",
+                MDM: "/images/technology-bg.png",
+                BookMYFun: "/images/webapplications.png",
+              }
+              const bgImage = featuredBackgrounds[activeFilter] || null
+              const hasBg = Boolean(bgImage)
+              return (
+                <div
+                  className={`rounded-2xl p-8 h-full shadow-md border border-gray-200 relative overflow-hidden ${
+                    hasBg ? "bg-cover bg-center bg-no-repeat" : "bg-white"
+                  }`}
+                  style={hasBg ? { backgroundImage: `url('${bgImage}')` } : {}}
+                >
+                  {/* Dark overlay when background image is present to ensure text readability */}
+                  {hasBg && <div className="absolute inset-0 bg-black/60 rounded-2xl"></div>}
+
+                  {/* Subtle gradient overlay only for plain white card */}
+                  {!hasBg && (
+                    <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
+                  )}
               
-              {/* Subtle gradient overlay for other cards */}
-              {activeFilter !== "Workflow" && (
-                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
-              )}
-              
-              <div className="relative z-10 flex flex-col justify-end h-full gap-8 ">
-                <div className="mb-4">
-                  <h3 className={`text-3xl font-bold mb-4 ${
-                    activeFilter === "Workflow" ? "text-white" : "text-gray-900"
-                  }`}>
-                    {featuredCardContent.title}
-                  </h3>
-                  <p className={`text-lg font-normal leading-relaxed ${
-                    activeFilter === "Workflow" ? "text-gray-200" : "text-gray-500"
-                  }`}>
-                    {featuredCardContent.description}
-                  </p>
+                  <div className="relative z-10 flex flex-col justify-end h-full gap-8 ">
+                    <div className="mb-4">
+                      <h3 className={`text-3xl font-bold mb-4 ${
+                        hasBg ? "text-white" : "text-gray-900"
+                      }`}>
+                        {featuredCardContent.title}
+                      </h3>
+                      <p className={`text-lg font-normal leading-relaxed ${
+                        hasBg ? "text-gray-200" : "text-gray-500"
+                      }`}>
+                        {featuredCardContent.description}
+                      </p>
+                    </div>
+                    <button
+                      className={`text-sm px-6 py-3 rounded-lg font-medium transition-colors self-start ${
+                        hasBg ? "bg-primary-700 text-white hover:bg-primary-700" : "bg-gray-900 text-white hover:bg-gray-800"
+                      }`}
+                    >
+                      Explore the product
+                    </button>
+                  </div>
                 </div>
-                <button className={`text-sm px-6 py-3 rounded-lg font-medium transition-colors self-start ${
-                  activeFilter === "Workflow" 
-                    ? "bg-primary-700 text-white hover:bg-primary-700" 
-                    : "bg-gray-900 text-white hover:bg-gray-800"
-                }`}>
-                  Explore the product
-                </button>
-              </div>
-            </div>
+              )
+            })()}
             
           </div>
 
