@@ -141,7 +141,7 @@ export function StatisticsSection() {
             >
               <div className="space-y-4 p-6">
                 <blockquote className="text-sm md:text-base leading-relaxed  ">
-                  "Continuous streaming analytics converts live events into actionable signals—powering alerts, adaptive routing, and instant business decisions."
+                  &ldquo;Continuous streaming analytics converts live events into actionable signals—powering alerts, adaptive routing, and instant business decisions.&rdquo;
                 </blockquote>
                 <div className="flex items-center space-x-3 ">
                   <div className="w-8 h-8 rounded-full bg-white/80"></div>
@@ -197,7 +197,7 @@ export function StatisticsSection() {
             >
               <div className="space-y-4">
                 <blockquote className="text-sm md:text-base leading-relaxed">
-                  "Unified orchestration layer automates data flow across systems, ensuring clean, consistent, and timely delivery from source to insight—without manual handoffs."
+                  &ldquo;Unified orchestration layer automates data flow across systems, ensuring clean, consistent, and timely delivery from source to insight—without manual handoffs.&rdquo;
                 </blockquote>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-full bg-white/70"></div>
@@ -220,7 +220,7 @@ export function StatisticsSection() {
             >
               <div className="space-y-4 px-4">
                 <blockquote className="text-sm md:text-base leading-relaxed">
-                  "Autonomous agents orchestrate end-to-end workflows—triggering actions, resolving exceptions, and closing loops—so human teams only handle edge cases."
+                  &ldquo;Autonomous agents orchestrate end-to-end workflows—triggering actions, resolving exceptions, and closing loops—so human teams only handle edge cases.&rdquo;
                 </blockquote>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-full bg-gray-600/70"></div>

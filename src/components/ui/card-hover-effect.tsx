@@ -20,7 +20,7 @@ export const HoverEffect = ({
     isHovered: boolean;
   }) => React.ReactNode;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
