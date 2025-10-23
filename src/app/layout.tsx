@@ -12,19 +12,19 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "KheeHoo - Innovative Business Solutions",
+  title: "KeeHoo - Innovative Business Solutions",
   description: "Empowering businesses with innovative solutions and cutting-edge technology to drive growth and success in the digital age.",
   keywords: "business solutions, technology, innovation, web development, AI solutions",
-  authors: [{ name: "KheeHoo Team" }],
+  authors: [{ name: "KeeHoo Team" }],
   openGraph: {
-    title: "KheeHoo - Innovative Business Solutions",
+    title: "KeeHoo - Innovative Business Solutions",
     description: "Empowering businesses with innovative solutions and cutting-edge technology",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "KheeHoo - Innovative Business Solutions",
+    title: "KeeHoo - Innovative Business Solutions",
     description: "Empowering businesses with innovative solutions and cutting-edge technology",
   },
   robots: {

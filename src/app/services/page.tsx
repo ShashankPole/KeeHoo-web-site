@@ -3,10 +3,10 @@ import { Code, Smartphone, Brain, Cloud, BarChart3, Shield } from 'lucide-react'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services - KheeHoo',
+  title: 'Services - KeeHoo',
   description: 'Explore our comprehensive range of technology services including web development, mobile apps, AI solutions, and cloud services.',
   openGraph: {
-    title: 'Services - KheeHoo',
+    title: 'Services - KeeHoo',
     description: 'Explore our comprehensive range of technology services including web development, mobile apps, AI solutions, and cloud services.',
   },
 };

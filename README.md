@@ -12,7 +12,7 @@
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd kheehoo
+cd keehoo
 ```
 
 2. Install dependencies:
@@ -48,9 +48,9 @@ Create a `.env.local` file with the following variables:
 OPENAI_API_KEY=your_openai_api_key_here
 
 # Optional
-NEXT_PUBLIC_SITE_URL=https://kheehoo.com
+NEXT_PUBLIC_SITE_URL=https://keehoo.com
 NEXT_PUBLIC_GA_ID=your_google_analytics_id
-CONTACT_EMAIL=info@kheehoo.com
+CONTACT_EMAIL=info@keehoo.com
 ```
 
 ### Customization
@@ -76,7 +76,7 @@ Update company details in:
 The chat widget features:
 - **Streaming Responses**: Real-time message streaming similar to ChatGPT
 - **Typing Effect**: Animated typing indicators
-- **Context Awareness**: AI understands KheeHoo's services and can answer questions
+- **Context Awareness**: AI understands KeeHoo's services and can answer questions
 - **Error Handling**: Graceful error handling and fallback messages
 - **Responsive Design**: Works on all device sizes
 
@@ -155,9 +155,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For support and questions:
-- Email: info@kheehoo.com
+- Email: info@keehoo.com
 - Phone: +1 (555) 123-4567
-- Website: https://kheehoo.com
+- Website: https://keehoo.com
 
 ## 🔄 Updates
 
@@ -170,4 +170,4 @@ For support and questions:
 
 ---
 
-Built with ❤️ by the KheeHoo team# KeeHoo-web-site
+Built with ❤️ by the KeeHoo team# KeeHoo-web-site

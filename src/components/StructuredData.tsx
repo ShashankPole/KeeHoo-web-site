@@ -2,15 +2,15 @@ export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "KheeHoo",
+    "name": "KeeHoo",
     "description": "Empowering businesses with innovative solutions and cutting-edge technology to drive growth and success in the digital age.",
-    "url": "https://kheehoo.com",
-    "logo": "https://kheehoo.com/logo.png",
+    "url": "https://keehoo.com",
+    "logo": "https://keehoo.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-555-123-4567",
       "contactType": "customer service",
-      "email": "info@kheehoo.com"
+      "email": "info@keehoo.com"
     },
     "address": {
       "@type": "PostalAddress",
@@ -21,9 +21,9 @@ export default function StructuredData() {
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://linkedin.com/company/kheehoo",
-      "https://twitter.com/kheehoo",
-      "https://facebook.com/kheehoo"
+      "https://linkedin.com/company/keehoo",
+      "https://twitter.com/keehoo",
+      "https://facebook.com/keehoo"
     ],
     "foundingDate": "2019",
     "numberOfEmployees": "50+",
@@ -41,16 +41,16 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "KheeHoo",
-    "url": "https://kheehoo.com",
+    "name": "KeeHoo",
+    "url": "https://keehoo.com",
     "description": "Innovative business solutions and cutting-edge technology services",
     "publisher": {
       "@type": "Organization",
-      "name": "KheeHoo"
+      "name": "KeeHoo"
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://kheehoo.com/search?q={search_term_string}",
+      "target": "https://keehoo.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -58,11 +58,11 @@ export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "KheeHoo",
+    "name": "KeeHoo",
     "description": "Technology company providing innovative business solutions",
-    "url": "https://kheehoo.com",
+    "url": "https://keehoo.com",
     "telephone": "+1-555-123-4567",
-    "email": "info@kheehoo.com",
+    "email": "info@keehoo.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "123 Business Street, Suite 100",

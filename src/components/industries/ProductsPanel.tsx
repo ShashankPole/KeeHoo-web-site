@@ -75,17 +75,17 @@ export function ProductsPanel() {
       case "MDM":
         return {
           title: "MDM",
-          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+          description: "Plan smarter, book faster, and experience better — all with BookMyFun"
         }
       case "Workflow":
         return {
           title: "Workflow",
-          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+          description: "Plan smarter, book faster, and experience better — all with BookMyFun"
         }
       default:
         return {
-          title: "BookMyShow",
-          description: "Plan smarter, book faster, and experience better — all with BookMyShow"
+          title: "BookMyFun",
+          description: "Plan smarter, book faster, and experience better — all with BookMyFun"
         }
     }
   }

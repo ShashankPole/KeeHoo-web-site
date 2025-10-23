@@ -1,6 +1,6 @@
-# Deployment Guide - KheeHoo Website
+# Deployment Guide - KeeHoo Website
 
-This guide covers deploying the KheeHoo website to various platforms.
+This guide covers deploying the KeeHoo website to various platforms.
 
 ## 🚀 Vercel Deployment (Recommended)
 
@@ -152,8 +152,8 @@ CMD ["node", "server.js"]
 
 ### Build and Run
 ```bash
-docker build -t kheehoo-website .
-docker run -p 3000:3000 -e OPENAI_API_KEY=your_key kheehoo-website
+docker build -t keehoo-website .
+docker run -p 3000:3000 -e OPENAI_API_KEY=your_key keehoo-website
 ```
 
 ## 🔧 Environment Variables

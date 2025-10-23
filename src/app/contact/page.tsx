@@ -166,8 +166,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@kheehoo.com</p>
-                    <p className="text-gray-600">support@kheehoo.com</p>
+                    <p className="text-gray-600">info@keehoo.com</p>
+                    <p className="text-gray-600">support@keehoo.com</p>
                   </div>
                 </div>
 

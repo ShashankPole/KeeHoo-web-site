@@ -1,6 +1,6 @@
-# KheeHoo Theme System
+# KeeHoo Theme System
 
-This document explains how to use the centralized theme system for the KheeHoo application.
+This document explains how to use the centralized theme system for the KeeHoo application.
 
 ## Overview
 

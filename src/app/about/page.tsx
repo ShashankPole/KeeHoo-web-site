@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import { Award, Target, Users, Lightbulb } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us - KheeHoo',
-  description: 'Learn about KheeHoo\'s mission, values, and the expert team behind our innovative business solutions.',
+  title: 'About Us - KeeHoo',
+  description: 'Learn about KeeHoo\'s mission, values, and the expert team behind our innovative business solutions.',
   openGraph: {
-    title: 'About Us - KheeHoo',
-    description: 'Learn about KheeHoo\'s mission, values, and the expert team behind our innovative business solutions.',
+    title: 'About Us - KeeHoo',
+    description: 'Learn about KeeHoo\'s mission, values, and the expert team behind our innovative business solutions.',
   },
 };
 
@@ -18,7 +18,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About KheeHoo
+              About KeeHoo
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are a team of passionate innovators dedicated to transforming businesses 
